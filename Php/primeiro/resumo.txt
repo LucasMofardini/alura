@@ -1,0 +1,10 @@
+php -a //Abre no terminal o php 
+echo //Para mostrar algo
+$numb //Para criar variaveis
+'' //Tudo dentro das aspas simples são lidas como string
+"" //Se tiver $variavel dentro das aspas duplas ele interpreta a variavel
+\n //Caracter especial para pular linha
+PHP_EOL //Para quebra de linha usando uma constante
+. //Para concatenar variaveis com string 
+if //Se
+else //Senao

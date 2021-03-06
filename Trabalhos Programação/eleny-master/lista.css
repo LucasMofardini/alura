@@ -1,0 +1,123 @@
+
+@font-face {
+font-family: rush;
+src: url(great.otf);
+}
+
+@font-face {
+font-family: trav;
+src: url(trav.ttf);
+}
+body{
+	margin: 0;
+/* background-color: blue; */
+	background-attachment: fixed;
+
+}
+.arrumar{
+	position: absolute;
+	left:43%;
+}
+.corpo{
+	margin:0 auto;
+	width: 1024px;
+	height: 5000px;
+	/* background-color: green; */
+
+}
+p{
+	font-family: trav;
+}
+header{
+
+	width: 100%;
+	height: 100px;
+	margin-top: -34px;
+
+}
+/* nav{
+	background-color: green;
+	width: 100%;
+	height: 3500px;
+	margin-top: -34px;
+}
+ */
+
+/* .corpo:hover{
+	opacity: 0.9;
+	transition: 2s;
+} */
+#titulo{
+
+	padding-top: 13px;
+	text-align: center;
+	font-family: exp;
+	font-size: 50px;
+
+	font-family: rush;
+
+
+}
+*{
+	transition: 0.5s;
+}
+button{
+
+ border: none;
+ color: white;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+}
+
+.bloco{
+	padding-left: 1.5em;
+		padding-right: 1.5em;
+		padding-bottom:  3em;
+
+		transition: transform 0.3s linear 0.1s;
+}
+h2{
+	font-family: trav;
+	text-align: center;
+	padding: 6px;
+
+}
+a{
+	color: pink;
+}
+
+th,tr,td,table{
+  color: white;
+}
+img{
+	width: 25em;
+	height: 15em;
+
+}
+
+.bloco:hover{
+	transform: scale(1.06);
+	transition: 0.6s;
+
+}
+footer{
+	position: fixed;
+	left: 46%;
+  bottom:0;
+	color: white;
+	background-color: black;
+		font-family: trav;
+}
+p{
+/* background-color: pink; */
+width: 25em;
+text-align: center;
+}
+@media screen and (max-width: 800px) {
+	p{
+		font-size: 21em;
+	}
+}

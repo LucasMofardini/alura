@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+<a href="http://www.superplacar.com.br/"> Clique aqui para direcionar você para o placar </a>
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+
+var vitorias = parseInt(prompt("Digite o numero de vitorias : "));
+
+var empates = parseInt(prompt("Digite o numero de empates : "));
+
+var pontos = (vitorias * 3) + empates;
+
+mostra ("O numero de pontos que seu time fez é "+ pontos);
+
+if (pontos > 28) {
+
+	mostra("<big>Seu time está melhor do que o ano passado</big>");
+
+}
+
+if (pontos < 28) {
+
+	mostra("<big>Seu time está pior do que o ano passado</big>");
+
+}
+
+if (pontos == 28) {
+
+	mostra("<big>Seu time está igual ao ano passado</big>");
+
+}
+
+mostra("Creditos - Sukitinha")
+</script>
