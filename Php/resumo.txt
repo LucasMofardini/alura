@@ -8,6 +8,6 @@ PHP_EOL //Para quebra de linha usando uma constante
 . //Para concatenar variaveis com string 
 if //Se
 else //Senao
-[2,13,1,4] // Array
+[2,13,1,4] //Array
 array(1,3,41,1) //Array
-
+{$valor['nome']} //Colocar as '{}' quando houver um array associativo com strings 

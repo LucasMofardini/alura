@@ -1,24 +1,12 @@
 <?php 
-//Esse : é para falar o que vai retornar
-function sacar(array $conta,float $valor) : array{
-  if($valor > $conta['saldo']){
-    exibeMensagem('Você não tem saldo suficiente');
-  }else{
-    $conta['saldo'] -= $valor;
-  }
-  return $conta;
-}
-function depositar(array $conta, float $valor) : array{
-  if($valor > 0){
-    $conta['saldo'] += $valor;
-  }else{
-    exibeMensagem("Depositos positivos");
-  }
-  return $conta;
-}
-function exibeMensagem($mensagem){
-  echo $mensagem . PHP_EOL;
-}
+//Include é para arquivos que nao necessariamente são necessarios para o funcionamento
+// include('funcoes.php');
+
+//Require é para arquivos que precisam ser executados no código
+// require('funcoes.php');
+//Require_once é para esse arquivo ser importado apenas uma vez
+require_once('funcoes.php');
+
 $contas = [
   '123.456.789-10' => [
       'nome' => 'Lucas',
@@ -41,6 +29,6 @@ $contas['123.456.789-10'] = depositar($contas['123.456.789-10'], 900);
 //Não sabemos necessariamente o indice de cada conta
 foreach($contas as  $index => $valor){
   // echo "Indice de valor $index " . $valor['nome'] .  " " . 'R$'.$valor['saldo'] . PHP_EOL;
-  exibeMensagem("Indice de valor $index " . $valor['nome'] .  " " . 'R$'.$valor['saldo']);
+  exibeMensagem("$index {$valor['nome']}  {$valor['saldo']}");
 }
 
