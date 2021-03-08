@@ -26,10 +26,25 @@ $contas['123.256.789-12'] = sacar($contas['123.256.789-12'],500);
 $contas['123.456.789-10'] = depositar($contas['123.456.789-10'], 900);
 unset($contas['123.256.789-12']);
 letrasM($contas['123.456.789-10' ]);
-//Não sabemos necessariamente o indice de cada conta
-foreach($contas as  $index => $conta){
-  list('nome' => $nome,'saldo' => $saldo) = $conta;
-  // echo "Indice de valor $index " . $valor['nome'] .  " " . 'R$'.$valor['saldo'] . PHP_EOL;
-  exibeMensagem("$index $nome $saldo");
-}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Contas correntes</h1>
 
+    <dl>
+        <?php foreach($contas as $cpf => $conta) { ?>
+        <dt>
+            <h3><?= $conta['nome']; ?> - <?= $cpf; ?></h3>
+        </dt>
+        <dd>Saldo: <?= $conta['saldo']; ?></dd>
+        <?php } ?>
+    </dl>
+</body>
+</html>
