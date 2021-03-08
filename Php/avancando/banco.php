@@ -23,12 +23,13 @@ $contas = [
 ];
 //Entra na conta , executa a function sacar da da $contas['CPF'] , e tira 500 do saldo
 $contas['123.256.789-12'] = sacar($contas['123.256.789-12'],500);
-
 $contas['123.456.789-10'] = depositar($contas['123.456.789-10'], 900);
-
+unset($contas['123.256.789-12']);
+letrasM($contas['123.456.789-10' ]);
 //Não sabemos necessariamente o indice de cada conta
-foreach($contas as  $index => $valor){
+foreach($contas as  $index => $conta){
+  list('nome' => $nome,'saldo' => $saldo) = $conta;
   // echo "Indice de valor $index " . $valor['nome'] .  " " . 'R$'.$valor['saldo'] . PHP_EOL;
-  exibeMensagem("$index {$valor['nome']}  {$valor['saldo']}");
+  exibeMensagem("$index $nome $saldo");
 }
 

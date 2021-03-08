@@ -19,3 +19,7 @@ function depositar(array $conta, float $valor) : array{
 function exibeMensagem($mensagem){
   echo $mensagem . PHP_EOL;
 }
+//Esse & é como se fosse um this, ela passa AQUELA conta e não uma copia dela, Ela referencia
+function letrasM(&$conta){
+  $conta['nome'] = strtoupper($conta['nome']);
+}
