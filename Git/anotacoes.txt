@@ -1,0 +1,2 @@
+git init //Inicializa o git e informa que existe um repositorio
+git status //Mostra o status do repositorio 
