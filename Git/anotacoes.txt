@@ -7,5 +7,7 @@ git commit -m "" //Criando um check Point de mudança //Mensagens descritivas no
 git log //Mostra informaçoes sobre os commits 
 git log --oneline //Mostra informações sobre os commits em uma linha, informações resumidas
 git log -p //Mostra informações sobre os commits , cógido atualizado dentro do commit 
+git log --pretty="parametros de formatação" //Para uma formatação personalizada  
 https://devhints.io/git-log //Site que contém informações sobre o git-log e seus formatos
 //Botão 'Q' ele sai do git log no windows
+//Commitar a cada alteração valida //Uma pequena funcionalidade //Resolução de bug
