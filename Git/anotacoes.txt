@@ -32,3 +32,18 @@ git rebase <branch> //Igual o merge
 1 - Você corrigi os conflitos no codigo mesmo (O VSCODE ajuda);
 2 - Você da um 'git add .', para adicionar a correção ao git
 3 - Você da um 'git commit', para informar ao git que você corrigiu os conflitos
+
+git checkout -- <Nome do arquivo> //Para voce voltar o codigo sem as alterações. Isso quando voce ainda não deu git add e nem commitou o arquivo.
+git reset HEAD <Nome do arquivo> // Desfaz o git add 
+git revert <HASH do commit que voce quer reverter> //Ele volta pro commit anterior ao do seu HASH.
+//Explicação do Alura - 'Com o git checkout nós desfazemos uma alteração que ainda não foi adicionada ao index ou stage, ou seja, antes do git add. Depois de adicionar com git add, para desfazer uma alteração, precisamos tirá-la deste estado, com git reset. Agora, se já realizamos o commit, o comando git revert pode nos salvar'.
+
+git stash //Salva as alterações no commit atual para se utilizar depois
+git stash list //Lista as alterações salva no stash
+git stash apply 0 //Para trazer o git stash e colocar pro codigo
+git stash drop //Para excluir o stash
+git stash pop //Tira do git stash a ULTIMA alteração salva nele e tras pro código e apaga do git stash. Uma junção do 'git apply' e do 'git drop'.
+//Quando utilizar o stash ? Quando precisamos parar o desenvolvimento de algo no meio para trabalhar em outra coisa.
+
+git checkout <HASH do commit> // Viaja para o commit da branch, porem as alterações nao são salvas. Para serem salvas você deve criar uma branch a partir desse commit.
+git checkout -b <Nome da branch> //Agora aquele commit que voce viajou ate ele fica salvo na branch podendo assim fazer alterações.
