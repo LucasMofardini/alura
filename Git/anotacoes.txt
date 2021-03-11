@@ -47,3 +47,13 @@ git stash pop //Tira do git stash a ULTIMA alteração salva nele e tras pro có
 
 git checkout <HASH do commit> // Viaja para o commit da branch, porem as alterações nao são salvas. Para serem salvas você deve criar uma branch a partir desse commit.
 git checkout -b <Nome da branch> //Agora aquele commit que voce viajou ate ele fica salvo na branch podendo assim fazer alterações.
+
+git diff <HASH>..<HASH> //O primero HASH é do commit antigo e o segundo HASH é o novo
+//Esse git diff vai mostrar a diferença entre os 2 commits.
+git diff <branch1>..<branch2> //Tambem pode ser usada entre duas branches
+git diff //Se voce nao adicionou nada e nem commitou nada ele mostra a diferença entre o commit atual e sua alteração no codigo.
+
+git tag -a v0.1.0 -m "Lançando a primeira versão" //Definir esse commit como um marco, um checkpoint, uma versão, um ponto fixo.
+git tag //Mostra as tags
+git push origin v0.1.0 //Manda a tag pro servidor
+//Agora voce consegue ver no GitHub no seu diretorio que existe uma release e ela pode ser baixada.
