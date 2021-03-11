@@ -11,3 +11,12 @@ git log --pretty="parametros de formatação" //Para uma formatação personaliz
 https://devhints.io/git-log //Site que contém informações sobre o git-log e seus formatos
 //Botão 'Q' ele sai do git log no windows
 //Commitar a cada alteração valida //Uma pequena funcionalidade //Resolução de bug
+//Criar uma branch para cara tarefa
+git checkout -b <nome da branch> //Para Criar uma branch e ja entrar nela
+git merge <branch> //Para unir a branch que voce está com outra pegando suas alterações
+git rebase <branch> //Igual o merge
+//Diferenças entre o git merge e o git rebase
+//O git merge gera um commit com o merge entre as 2 branches
+//O git rebase faz o merge entre as 2 porém deixa o historico do log mais linear,
+//Com o ultimo commit feito na branch da alteração
+//Explicação do Alura - 'O merge junta os trabalhos e gera um merge commit. O rebase aplica os commits de outra branch na branch atual'.
