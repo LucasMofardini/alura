@@ -26,3 +26,14 @@ zip -r <novo nome>.zip <nome do diretorio> //Para zipar o diretorio
 unzip <nome do diretorio zipado> //Para descompactar o zip
 unzip -q <nome do diretorio zipado> //Para descompactar o zip mas sem mostrar nada no terminal, ficar 'QUIETO'
 unzip -l <nome do diretorio zipado> //Para mostrar o que tem dentro do zip
+tar -cz <nome do diretorio> > <nome>.tag.gz //Para zipar de outro formato
+tar -xzf  <nome>.tar.gz //Para descompactar
+-v //Verboso
+-q //Quieto 
+touch //Encosta o arquivo
+date "+%d de %B de %Y" //Mostra o dia mes e ano
+head <nome arquivo> //Mostra as 10 primeiras linhas
+head -n <numero de linhas> <nome do arquivo> //Mostra a quantidade de linhas limitada por voce
+tail <nome arquivo> //Mostra as 10 ultimas linhas
+tail -n <numero de linhas> <nome do arquivo> //Mostra a quantidade de linhas limitada por voce
+less <nome do arquivo> //Voce navega no arquivo com as setas
