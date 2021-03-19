@@ -37,3 +37,10 @@ head -n <numero de linhas> <nome do arquivo> //Mostra a quantidade de linhas lim
 tail <nome arquivo> //Mostra as 10 ultimas linhas
 tail -n <numero de linhas> <nome do arquivo> //Mostra a quantidade de linhas limitada por voce
 less <nome do arquivo> //Voce navega no arquivo com as setas
+vi <nome do arquivo> //Voce navega no arquivo
+//Dentro do vi 
+:wq //Sai e salva
+/<algo> //Voce pesquisa por algo la dentro
+/0G //para ir para a primeira letra do arquivo
+yy //Copia Linha
+p //Cola linha
