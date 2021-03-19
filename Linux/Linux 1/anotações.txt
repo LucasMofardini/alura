@@ -9,3 +9,13 @@ ls  -la //Mostra todos os arquivos até os invisiveis
 clear //Limpa a tela
 man <comando> //Para mostrar o manual do comando ex: man ls
 whoami //Mostra o nome do usuário 
+cd //Muda de diretorio
+echo 'Bem Vindo' >> bemvindo.txt //Para adicionar no arquivo
+cd .. //Volta um diretorio
+mkdir <nome do diretorio> //Para criar um diretorio
+rmdir <nome do diretorio> //Apaga o diretorio Vazio
+rm <nome do arquivo> //Apaga o arquivo
+cat arquivo?.txt //Ele mostra todos os arquivos que tem um caractere depois do arquivo ex: arquivo1,arquivo2, arquivo3.
+cat arquivo*.txt //Ele mostra todos os arquivos depois do arquivo ex: arquivo1,arquivo2, arquivo3, arquivo123
+rm -r <nome do diretorio> //Apaga tudo do diretorio, (sem dó)
+* //Tudo
