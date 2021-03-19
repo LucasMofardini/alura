@@ -1,0 +1,5 @@
+Pwd  //Mostar o diretorio atual e seu caminho
+ls //Lista os diretorios
+echo //Escreve algo
+echo 'Bem Vindo' > bemvindo.txt //Escreve 'Bem vindo' dentro do arquivo bemvindo.txt
+cat <nome do arquivo> //Mostra o que tem dentro do arquivo
