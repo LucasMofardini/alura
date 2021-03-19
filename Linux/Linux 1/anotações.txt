@@ -18,4 +18,11 @@ rm <nome do arquivo> //Apaga o arquivo
 cat arquivo?.txt //Ele mostra todos os arquivos que tem um caractere depois do arquivo ex: arquivo1,arquivo2, arquivo3.
 cat arquivo*.txt //Ele mostra todos os arquivos depois do arquivo ex: arquivo1,arquivo2, arquivo3, arquivo123
 rm -r <nome do diretorio> //Apaga tudo do diretorio, (sem dó)
-* //Tudo
+* //Tudo ex: cat *.txt mostra tudo que tenha o final .txt 
+cp <nome do arquivo para ser copiado> <novo nome> //Para copiar um arquivo
+mv <nome do arquivo para ser movido> <novo nome> //Para 'mover' o nome do arquivo, para trocar o nome do arquivo ex: mv lucas.txt workspace/projetos/lucas2.txt 
+cp -r <nome do diretorio> //Copia o diretorio todo
+zip -r <novo nome>.zip <nome do diretorio> //Para zipar o diretorio
+unzip <nome do diretorio zipado> //Para descompactar o zip
+unzip -q <nome do diretorio zipado> //Para descompactar o zip mas sem mostrar nada no terminal, ficar 'QUIETO'
+unzip -l <nome do diretorio zipado> //Para mostrar o que tem dentro do zip
