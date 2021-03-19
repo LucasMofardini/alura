@@ -1,5 +1,11 @@
 Pwd  //Mostar o diretorio atual e seu caminho
-ls //Lista os diretorios
+ls //Lista os diretorios e conteudos na pasta
 echo //Escreve algo
 echo 'Bem Vindo' > bemvindo.txt //Escreve 'Bem vindo' dentro do arquivo bemvindo.txt
 cat <nome do arquivo> //Mostra o que tem dentro do arquivo
+cat -n <nome do arquivo> //Mostra com linhas
+ls -l //Mostra mais informações 
+ls  -la //Mostra todos os arquivos até os invisiveis
+clear //Limpa a tela
+man <comando> //Para mostrar o manual do comando ex: man ls
+whoami //Mostra o nome do usuário 
