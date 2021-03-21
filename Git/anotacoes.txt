@@ -1,59 +1,73 @@
-git config --local user.name "Seu nome aqui" //Quando inciar pela primeira vez o git
-git config --local user.email "seu@email.aqui" //Quando inciar pela primeira vez o git
-//Se passar o parametro --local ele vai ficar com essas alterações apenas no repositorio
+Curso Git 1 {
 
-git init //Inicializa o git e informa que existe um repositorio
+  git config --local user.name "Seu nome aqui" //Quando inciar pela primeira vez o git
+  git config --local user.email "seu@email.aqui" //Quando inciar pela primeira vez o git
+  //Se passar o parametro --local ele vai ficar com essas alterações apenas no repositorio
 
-git status //Mostra o status do repositorio 
+  git init //Inicializa o git e informa que existe um repositorio
 
-git commit -m "" //Criando um check Point de mudança //Mensagens descritivas no commit
+  git status //Mostra o status do repositorio 
 
-git log //Mostra informaçoes sobre os commits 
-git log --oneline //Mostra informações sobre os commits em uma linha, informações resumidas
-git log -p //Mostra informações sobre os commits , cógido atualizado dentro do commit 
-git log --pretty="parametros de formatação" //Para uma formatação personalizada  
-https://devhints.io/git-log //Site que contém informações sobre o git-log e seus formatos
-//Botão 'Q' ele sai do git log no windows
+  git commit -m "" //Criando um check Point de mudança //Mensagens descritivas no commit
 
-//Commitar a cada alteração valida //Uma pequena funcionalidade //Resolução de bug
-//Criar uma branch para cara tarefa
+  git log //Mostra informaçoes sobre os commits 
+  git log --oneline //Mostra informações sobre os commits em uma linha, informações resumidas
+  git log -p //Mostra informações sobre os commits , cógido atualizado dentro do commit 
+  git log --pretty="parametros de formatação" //Para uma formatação personalizada  
+  https://devhints.io/git-log //Site que contém informações sobre o git-log e seus formatos
+  //Botão 'Q' ele sai do git log no windows
 
-git checkout -b <nome da branch> //Para Criar uma branch e ja entrar nela
+  //Commitar a cada alteração valida //Uma pequena funcionalidade //Resolução de bug
+  //Criar uma branch para cara tarefa
 
-git merge <branch> //Para unir a branch que voce está com outra pegando suas alterações
-git rebase <branch> //Igual o merge
-//Diferenças entre o git merge e o git rebase
-//O git merge gera um commit com o merge entre as 2 branches
-//O git rebase faz o merge entre as 2 porém deixa o historico do log mais linear,
-//Com o ultimo commit feito na branch da alteração
-//Explicação do Alura - 'O merge junta os trabalhos e gera um merge commit. O rebase aplica os commits de outra branch na branch atual'.
+  git checkout -b <nome da branch> //Para Criar uma branch e ja entrar nela
 
-//Se voce tentar dar o git merge e der conflito.
-1 - Você corrigi os conflitos no codigo mesmo (O VSCODE ajuda);
-2 - Você da um 'git add .', para adicionar a correção ao git
-3 - Você da um 'git commit', para informar ao git que você corrigiu os conflitos
+  git merge <branch> //Para unir a branch que voce está com outra pegando suas alterações
+  git rebase <branch> //Igual o merge
+  //Diferenças entre o git merge e o git rebase
+  //O git merge gera um commit com o merge entre as 2 branches
+  //O git rebase faz o merge entre as 2 porém deixa o historico do log mais linear,
+  //Com o ultimo commit feito na branch da alteração
+  //Explicação do Alura - 'O merge junta os trabalhos e gera um merge commit. O rebase aplica os commits de outra branch na branch atual'.
 
-git checkout -- <Nome do arquivo> //Para voce voltar o codigo sem as alterações. Isso quando voce ainda não deu git add e nem commitou o arquivo.
-git reset HEAD <Nome do arquivo> // Desfaz o git add 
-git revert <HASH do commit que voce quer reverter> //Ele volta pro commit anterior ao do seu HASH.
-//Explicação do Alura - 'Com o git checkout nós desfazemos uma alteração que ainda não foi adicionada ao index ou stage, ou seja, antes do git add. Depois de adicionar com git add, para desfazer uma alteração, precisamos tirá-la deste estado, com git reset. Agora, se já realizamos o commit, o comando git revert pode nos salvar'.
+  //Se voce tentar dar o git merge e der conflito.
+  1 - Você corrigi os conflitos no codigo mesmo (O VSCODE ajuda);
+  2 - Você da um 'git add .', para adicionar a correção ao git
+  3 - Você da um 'git commit', para informar ao git que você corrigiu os conflitos
 
-git stash //Salva as alterações no commit atual para se utilizar depois
-git stash list //Lista as alterações salva no stash
-git stash apply 0 //Para trazer o git stash e colocar pro codigo
-git stash drop //Para excluir o stash
-git stash pop //Tira do git stash a ULTIMA alteração salva nele e tras pro código e apaga do git stash. Uma junção do 'git apply' e do 'git drop'.
-//Quando utilizar o stash ? Quando precisamos parar o desenvolvimento de algo no meio para trabalhar em outra coisa.
+  git checkout -- <Nome do arquivo> //Para voce voltar o codigo sem as alterações. Isso quando voce ainda não deu git add e nem commitou o arquivo.
+  git reset HEAD <Nome do arquivo> // Desfaz o git add 
+  git revert <HASH do commit que voce quer reverter> //Ele volta pro commit anterior ao do seu HASH.
+  //Explicação do Alura - 'Com o git checkout nós desfazemos uma alteração que ainda não foi adicionada ao index ou stage, ou seja, antes do git add. Depois de adicionar com git add, para desfazer uma alteração, precisamos tirá-la deste estado, com git reset. Agora, se já realizamos o commit, o comando git revert pode nos salvar'.
 
-git checkout <HASH do commit> // Viaja para o commit da branch, porem as alterações nao são salvas. Para serem salvas você deve criar uma branch a partir desse commit.
-git checkout -b <Nome da branch> //Agora aquele commit que voce viajou ate ele fica salvo na branch podendo assim fazer alterações.
+  git stash //Salva as alterações no commit atual para se utilizar depois
+  git stash list //Lista as alterações salva no stash
+  git stash apply 0 //Para trazer o git stash e colocar pro codigo
+  git stash drop //Para excluir o stash
+  git stash pop //Tira do git stash a ULTIMA alteração salva nele e tras pro código e apaga do git stash. Uma junção do 'git apply' e do 'git drop'.
+  //Quando utilizar o stash ? Quando precisamos parar o desenvolvimento de algo no meio para trabalhar em outra coisa.
 
-git diff <HASH>..<HASH> //O primero HASH é do commit antigo e o segundo HASH é o novo
-//Esse git diff vai mostrar a diferença entre os 2 commits.
-git diff <branch1>..<branch2> //Tambem pode ser usada entre duas branches
-git diff //Se voce nao adicionou nada e nem commitou nada ele mostra a diferença entre o commit atual e sua alteração no codigo.
+  git checkout <HASH do commit> // Viaja para o commit da branch, porem as alterações nao são salvas. Para serem salvas você deve criar uma branch a partir desse commit.
+  git checkout -b <Nome da branch> //Agora aquele commit que voce viajou ate ele fica salvo na branch podendo assim fazer alterações.
 
-git tag -a v0.1.0 -m "Lançando a primeira versão" //Definir esse commit como um marco, um checkpoint, uma versão, um ponto fixo.
-git tag //Mostra as tags
-git push origin v0.1.0 //Manda a tag pro servidor
-//Agora voce consegue ver no GitHub no seu diretorio que existe uma release e ela pode ser baixada.
+  git diff <HASH>..<HASH> //O primero HASH é do commit antigo e o segundo HASH é o novo
+  //Esse git diff vai mostrar a diferença entre os 2 commits.
+  git diff <branch1>..<branch2> //Tambem pode ser usada entre duas branches
+  git diff //Se voce nao adicionou nada e nem commitou nada ele mostra a diferença entre o commit atual e sua alteração no codigo.
+
+  git tag -a v0.1.0 -m "Lançando a primeira versão" //Definir esse commit como um marco, um checkpoint, uma versão, um ponto fixo.
+  git tag //Mostra as tags
+  git push origin v0.1.0 //Manda a tag pro servidor
+  //Agora voce consegue ver no GitHub no seu diretorio que existe uma release e ela pode ser baixada.
+
+}
+Curso Git 2 {
+  Issues //Problemas, sujestão de melhoria, pergunta 
+  Para resolver uma issue {
+      Dar um fork no repositorio.
+      git remote add origin <Link do seu projeto>
+      git pull origin master
+      
+  }
+
+}
