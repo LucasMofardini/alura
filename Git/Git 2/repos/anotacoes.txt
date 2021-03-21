@@ -1,0 +1,18 @@
+git config --local user.name "Seu nome aqui" //Quando inciar pela primeira vez o git
+git config --local user.email "seu@email.aqui" //Quando inciar pela primeira vez o git
+//Se passar o parametro --local ele vai ficar com essas alterações apenas no repositorio
+git init //Inicializa o git e informa que existe um repositorio
+git status //Mostra o status do repositorio 
+git commit -m "" //Criando um check Point de mudança //Mensagens descritivas no commit
+git log //Mostra informaçoes sobre os commits 
+git log --oneline //Mostra informações sobre os commits em uma linha, informações resumidas
+git log -p //Mostra informações sobre os commits , cógido atualizado dentro do commit 
+git log --pretty="parametros de formatação" //Para uma formatação personalizada  
+https://devhints.io/git-log //Site que contém informações sobre o git-log e seus formatos
+//Botão 'Q' ele sai do git log no windows
+//Commitar a cada alteração valida //Uma pequena funcionalidade //Resolução de bug
+git init --bare //Para criar um repositorio puro, apenas com as alterações //Repositorio remoto
+git remote //Lista o repositorio remoto
+git remote add //Adiciona um repositorio remoto
+git push <remote><branch> //Empurra para o servidor
+git pull <remote><branch> //Puxa para o servidor
