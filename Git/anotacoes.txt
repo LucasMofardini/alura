@@ -64,10 +64,33 @@ Curso Git 1 {
 Curso Git 2 {
   Issues //Problemas, sujestão de melhoria, pergunta 
   Para resolver uma issue {
-      Dar um fork no repositorio.
-      git remote add origin <Link do seu projeto>
-      git pull origin master
-      
+    //Dar um fork no repositorio.
+    git remote add origin <Link do seu projeto>
+    git pull origin master
+    //Apos as alterações você da um pull request
+    //O dono do repositorio faz um merge pull request para unir o codigo
+  }
+  Juntar commits {
+    git rebase -i HEAD~<qtd de commits apartir do HEAD que vai ser unido>
+    //Voce tira o 'pick' e adiciona o 's'
+    //Voce deixa 1 commit com 'pick'
+    //:x
+    //Adicionar uma nova mensagem
   }
 
+  git cherry-pick <HASH> //Busca especificamente 1 commit de outra branch 
+
+  Buscar pelos commits para achar algum bug{
+    git bisect start
+    git bisect bad HEAD //Onde está com o bug o código
+    git bisect good <HASH> //Onde estáva funcionando completamente (Hash do commit que funcionava)
+    //Se o git o commit nao é o correto, git bisect bad
+    //Se for o correto git bisect good
+    git bisect reset
+    git revert <HASH certo>
+   }
+   git show <HASH> //Mostra Alterações do commit  
+   Achar o responsável pela alteração{
+     git blame <nome do arquivo> //Mostra o responsável por cada linha
+   }
 }
