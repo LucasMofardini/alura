@@ -113,5 +113,15 @@ Curso Git 2 {
   *Importante* - Quando acaba as alterações, junta-las em uma branch release/<versão> para teste
    }
 
+  Git Hooks{
+      //Eventos  
+    cd .git/
+    cd hooks/
+      //Existe varios arquivos .sample
+    cria um arquivo
+    começar com : #!/bin/sh
+    dar um chmod u+x <nome do arquivo> //Para deixar as permissões iguais aos outros
+
+  }
 
 }
