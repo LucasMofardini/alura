@@ -121,6 +121,14 @@ Curso Git 2 {
     cria um arquivo
     começar com : #!/bin/sh
     dar um chmod u+x <nome do arquivo> //Para deixar as permissões iguais aos outros
+    #!/bin/sh
+
+    Deploy automatico - 
+
+    *Curso Git Hooks*
+    #!/bin/sh
+    git --git-dir={caminho_da_pasta_do_servidor} --work-tree={caminho_da_pasta_web} checkout -f
+    //Envia as modificações do serv para a pasta web forçando com um checkout
 
   }
 
