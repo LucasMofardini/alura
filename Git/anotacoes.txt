@@ -93,4 +93,43 @@ Curso Git 2 {
    Achar o responsável pela alteração{
      git blame <nome do arquivo> //Mostra o responsável por cada linha
    }
+
+  git branch -D <nome da Branch> //Para deletar a branch
+  
+  Git Flow{
+  Nomeclatura para branchs{
+    fix/ //Correção.
+    feature/ //Funcionalidade
+    hotfix/ //Pequena alteração.
+  }
+  5 tipos de branchs{
+  - Feature: são juntadas na branch develop
+  - Hotfix: direto na master, pois são pequenos bugs. E adicionados também na develop.
+             # (Fix: são juntadas na branch develop)
+  - Develop : Onde vai ser colocada as features
+  - Release : Serve para testar e validar as features da develop e fazer o merge com a master
+  - Master : Onde ficará o ambiente de produção com a release testada e funcionando
+  }
+  *Importante* - Quando acaba as alterações, junta-las em uma branch release/<versão> para teste
+   }
+
+  Git Hooks{
+      //Eventos  
+    cd .git/
+    cd hooks/
+      //Existe varios arquivos .sample
+    cria um arquivo
+    começar com : #!/bin/sh
+    dar um chmod u+x <nome do arquivo> //Para deixar as permissões iguais aos outros
+    #!/bin/sh
+
+    Deploy automatico - 
+
+    *Curso Git Hooks*
+    #!/bin/sh
+    git --git-dir={caminho_da_pasta_do_servidor} --work-tree={caminho_da_pasta_web} checkout -f
+    //Envia as modificações do serv para a pasta web forçando com um checkout
+
+  }
+
 }
