@@ -19,3 +19,5 @@ $this->saldo //Para usar o this no php
 //Definir como Private uma classe
 get //Recupera, mostra 
 set //Acessa, Modifica  
+__construct() //Para inicializar atributos direto no construtor da classe
+:: //Acessa atributos ou metodos estaticos
