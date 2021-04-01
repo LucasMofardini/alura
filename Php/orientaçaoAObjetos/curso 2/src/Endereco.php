@@ -10,16 +10,16 @@ class Endereco{
     $this->rua = $rua;
     $this->numero = $numero;
   }
-  function recuperaCidade(){
+  public function recuperaCidade(){
       return $this->cidade;
   }
-  function recuperaBairro(){
+  public function recuperaBairro(){
     return $this->bairro;
   }
-  function recuperaRua(){
+  public function recuperaRua(){
     return $this->rua;
   }
-  function recuperaNumero(){
+  public function recuperaNumero(){
     return $this->numero;
 }
 }
