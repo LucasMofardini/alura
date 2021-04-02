@@ -1,4 +1,5 @@
 <?php
+namespace Alura\Banco\Modelo;
 //Funcionario é uma pessoa
 class Funcionario extends Pessoa{
  

@@ -1,9 +1,10 @@
 <?php
+require_once 'autoload.php';
 
-require_once 'src/Conta.php';
-require_once 'src/Endereco.php';
-require_once 'src/CPF.php';
-require_once 'src/Titular.php';
+use Alura\Banco\Modelo\Conta\Titular;
+use Alura\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Conta\Conta;
 
 
 $endereco = new Endereco('São Paulo','Capão Redondo', 'Consciencia Popular', '22');
