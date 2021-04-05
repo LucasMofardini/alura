@@ -1,9 +1,9 @@
 <?php
-use Alura\Banco\Modelo\Conta\Titular;
-use Alura\Banco\Modelo\Endereco;
-use Alura\Banco\Modelo\CPF;
-use Alura\Banco\Modelo\Conta\ContaCorrente;
-use Alura\Banco\Modelo\Conta\ContaPoupanca;
+use Alura\Banco\Modelo\Conta\{Titular,ContaCorrente,ContaPoupanca};
+use Alura\Banco\Modelo\{Endereco,CPF};
+
+
+
 require_once 'autoload.php';
 $conta = new ContaCorrente(
     new Titular( 
