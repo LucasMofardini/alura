@@ -26,3 +26,8 @@ Conceitos de orientação objeto -
     - Encapsulamento;
     - Herança;
     - Polimorfismo;
+Interface // Um contrato a ser implementado, classe abstrata com todos os metodos abstratos.
+Todos os metodos que começam com '__' são metodos mágicos.
+final antes de começar uma classe para impedir a herança de mais classes. Nao da pra extender a classe.
+    Ou da pra usar em um metodo tambem. Usa-se 'Final' antes do metodo para nao sobrescreve-lo;
+Trait = Classe onde se coloca código para chamar em outra classe.

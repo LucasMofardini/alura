@@ -1,6 +1,9 @@
 <?php 
 namespace Alura\Banco\Modelo;
-class Endereco{
+
+final class Endereco{
+  //Para usar uma Trait
+  use AcessoPropriedades;
   private $cidade;
   private $bairro;
   private $rua;
@@ -22,5 +25,15 @@ class Endereco{
   }
   public function recuperaNumero(){
     return $this->numero;
-}
+  }
+  public function __toString() :string{
+
+    return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
+    
+  }
+
+  public function __set($name, string $value):void
+  {
+    $this->$name = $value;
+  }
 }

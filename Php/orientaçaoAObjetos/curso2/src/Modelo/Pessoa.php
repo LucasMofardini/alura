@@ -3,6 +3,8 @@ namespace Alura\Banco\Modelo;
 
 
 abstract class Pessoa{
+  //Todos os herdeiros de pessoas vao ter os metodos do 'AcessoPropriedades'
+  use AcessoPropriedades;
   protected $nome;
   protected $cpf;
 
