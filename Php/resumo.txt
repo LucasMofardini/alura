@@ -31,3 +31,10 @@ Todos os metodos que começam com '__' são metodos mágicos.
 final antes de começar uma classe para impedir a herança de mais classes. Nao da pra extender a classe.
     Ou da pra usar em um metodo tambem. Usa-se 'Final' antes do metodo para nao sobrescreve-lo;
 Trait = Classe onde se coloca código para chamar em outra classe.
+
+Php Web - 
+Se quiser instalar as dependencias para usar o php na web{
+sudo apt-get update
+sudo apt-get install php default-mysql-server php-mysql apache2 libapache2-mod-php phpmyadmin -y
+}
+na pasta /var/www/html coloca o arquivo;
