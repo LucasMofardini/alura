@@ -1,7 +1,10 @@
 <?php
+require_once 'config.php';
 require_once 'Artigo.php';
-$artigo = new Artigo();
+
+$artigo = new Artigo($mysql);
 $artigos = $artigo->exibirTodos();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,6 +16,7 @@ $artigos = $artigo->exibirTodos();
 </head>
 
 <body>
+    
     <div id="container">
         <h1>Meu Blog</h1>
         <?php foreach($artigos as $artigo) { ?>
