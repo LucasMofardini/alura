@@ -36,5 +36,8 @@ Php Web -
 Se quiser instalar as dependencias para usar o php na web{
 sudo apt-get update
 sudo apt-get install php default-mysql-server php-mysql apache2 libapache2-mod-php phpmyadmin -y
-}
 na pasta /var/www/html coloca o arquivo;
+/etc/init.d/mysql stop
+/etc/init.d/mysql start
+
+}

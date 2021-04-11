@@ -30,6 +30,7 @@ $artigos = $artigo->exibirTodos();
         </p>
       <?php } ?>
     </div>
+    
 </body>
 
 </html>

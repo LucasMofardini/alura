@@ -2,6 +2,6 @@
 $mysql = new mysqli('localhost','root','root','blog');
 $mysql->set_charset('utf8');
 if($mysql == false){
-    echo 'ERRO';
+    echo 'Banco não está funcionando';
 }
 
