@@ -24,7 +24,11 @@
             //Ele devolve o resultado e é colocado em um array associativo
             $artigo =  $selecionaArtigo->get_result()->fetch_assoc();
             return  $artigo;
-
+        }
+        public function adicionar(string $titulo, string $conteudo):void{
+           $insereArtigo =  $this->mysql->prepare('INSERT INTO artigos (titulo,conteudo) VALUES (?,?);');
+           $insereArtigo->bind_param('ss',$titulo,$conteudo);
+           $insereArtigo->execute();
         }
     }
 
