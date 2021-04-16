@@ -1,0 +1,25 @@
+Linux 2 -
+
+ps -e //Mostra todos os processos que estão rodando na maquina
+ps -ef //Mostra informações de todos os processos
+ps -ef | grep chrome //Mostra todos os processos com o nome de chrome
+kill -9 <numero do procesos> //Mata o processo sem dar chance a ele
+top //Mostra o consumo de cpu e de memoria ram dos processos
+killall -9 chrome //Mata todos os processos 'chrome'
+pstree //Ver os processos em arvore
+jobs //Ver o que ta rodando no terminal 
+bg <numero do processo> //Para rodar um processo no background
+fg <numero do processo> //Para rodar um processo no foreground
+firefox &//Abrir direto no background
+DRWX - Read , Write , Execute
+     Diretorio,  Ler , Escrever , Executar
+chmod +x <nome do arquivo> //Da para o arquivo a capacidade de ser executado
+chmod -x <nome do arquivo> //Tira  do arquivo a capacidade de ser executado
+locate <nome do arquivo> //Para mostrar onde tem em todo seu hd o arquivo
+updatebd //Para atualizar o banco onde o locate pega os dados no linux
+sudo //Executa como root
+which <comando>//Qual arquivo vai executar quando voce executar o comando
+/usr/bin //Diretorio onde fica as aplicações
+passwd //Muda a senha do usuario
+sudo passwd //Colocar senha no root
+su <nome de usuario> //Para trocar de usuario

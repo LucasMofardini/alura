@@ -6,7 +6,6 @@ $obj_artigo =  new Artigo($mysql);
 //Pegamos o id da url 
 $artigo = $obj_artigo->encontrarPorId($_GET['id']);
 
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,3 +31,4 @@ $artigo = $obj_artigo->encontrarPorId($_GET['id']);
 </body>
 
 </html>
+
