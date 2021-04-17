@@ -23,3 +23,16 @@ which <comando>//Qual arquivo vai executar quando voce executar o comando
 passwd //Muda a senha do usuario
 sudo passwd //Colocar senha no root
 su <nome de usuario> //Para trocar de usuario
+adduser //Para criar novo usuario
+chmod o-rx //Tira o RX dos outros usuarios
+      u-   //Tira do proprio usuario
+      g-   //Tira do grupo
+.bashrc //Pasta para se adicionar o path
+apt-get install <nome do programa> //Para instalar o programa
+apt-get remove <nome do programa> //Para desinstalar o programa
+apt-cache search <nome do programa> //Para listar os programas com aquele nome
+apt-get updtade //Atualizar os progras 
+dpkg -i <nome do programa> //Para instalar um programa 
+dpkg -r <nome do pacote>   //Para desinstalar um programa
+service <nome do serviço> stop //Para parar o processo 
+/etc/init.d //São diretorios que iniciam quando nossa maquina inicia
