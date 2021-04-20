@@ -36,3 +36,18 @@ dpkg -i <nome do programa> //Para instalar um programa
 dpkg -r <nome do pacote>   //Para desinstalar um programa
 service <nome do serviço> stop //Para parar o processo 
 /etc/init.d //São diretorios que iniciam quando nossa maquina inicia
+Para buildar um projeto com o codigo fonte{
+      tar zxf <pasta do projeto .gz>
+      ./configure
+      make
+      sudo make install
+}
+Acessando servidor remoto{
+      apt-get install ssh;
+      ssh <nome usuario>@<ip>
+      ssh -x <nome usuario>@<ip>//Para se conectar com outro servidor mas as formas graficas serem abertas no seu computador
+
+      scp -r <nome do arquivo> <usuario>@<ip>:/<diretorio para ser enviado> 
+      ex: scp work.zip jose@localhost:~/
+      //Ta mandando o arquivo work.zip para o usuario jose para a pasta home      
+}
