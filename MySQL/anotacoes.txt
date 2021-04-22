@@ -1,0 +1,15 @@
+Install myqsl na oracle https://dev.mysql.com/downloads/installer/
+import a database sucos_vendas
+MYSQL{
+  Comandos DDL, DML e DCL;
+  Servidor;
+  Portabilidade;
+  Multithreads;
+  Formas de Armazenamento;
+  Velocidade;
+  Desempenho;
+  Segurança;
+  Capacidade;
+  Aplicabilidade;
+  Logs;
+}
