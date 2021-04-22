@@ -12,4 +12,5 @@ MYSQL{
   Capacidade;
   Aplicabilidade;
   Logs;
+  É da ORACLE;
 }
