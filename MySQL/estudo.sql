@@ -65,3 +65,5 @@ CASE WHEN PRECO_DE_LISTA >= 12 then 'PRODUTO CARO'
 ELSE 'PRODUTO BARATO' END  as 'STATUS DO PREÇO'
 from tabela_de_produtos tdp;
 
+
+
