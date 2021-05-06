@@ -66,4 +66,87 @@ ELSE 'PRODUTO BARATO' END  as 'STATUS DO PREÇO'
 from tabela_de_produtos tdp;
 
 
+#Mostra tudo de  todas as pessoas que tiverem a matricula igual na tabela_de_vendedores e notas_fiscais 
+Select * from tabela_de_vendedores tdv 
+INNER JOIN notas_fiscais nf 
+ON tdv.MATRICULA = nf.MATRICULA;
+
+#Mostra a matricula, nome e conta quantas notas tem ao todo da tabela de vendedores e da tabela de notas fiscais
+SELECT a.matricula, a.nome, count(*) as "Notas emitidas" from tabela_de_vendedores a 
+INNER JOIN notas_fiscais b 
+ON a.MATRICULA = b.MATRICULA group by a.matricula;
+
+#Faturamento anual da empresa. 
+SELECT YEAR(DATA_VENDA), SUM(QUANTIDADE * PRECO) AS FATURAMENTO
+FROM notas_fiscais NF INNER JOIN itens_notas_fiscais INF 
+ON NF.NUMERO = INF.NUMERO
+GROUP BY YEAR(DATA_VENDA);
+
+#Left Join
+Select count(*) from tabela_de_clientes tdc; 
+
+SELECT cpf, count(*) from notas_fiscais nf  group by cpf;
+
+#Todo mundo  da tabela de clientes, mas somentes os correspondentes da tabela de notas fiscais
+#Todos que tem cadastro, mas nao tem compra
+select DISTINCT a.CPF, a.NOME, b.CPF from tabela_de_clientes a 
+left join notas_fiscais b ON a.CPF = b.CPF where b.cpf is null;
+#Alguem que tem no cadastro e que nao comprou em 2015
+select DISTINCT a.CPF, a.NOME, b.CPF from tabela_de_clientes a 
+left join notas_fiscais b ON a.CPF = b.CPF where b.cpf is null AND YEAR(b.DATA_VENDA) = 2015;
+
+Select * from tabela_de_vendedores tdv 
+
+#Somente vendedores que moram no mesmo bairro que os clientes
+Select tdv.BAIRRO, tdv.NOME, tdc.BAIRRO, tdc.NOME from tabela_de_vendedores tdv 
+INNER JOIN tabela_de_clientes tdc 
+ON tdv.BAIRRO = tdc.BAIRRO;
+
+#Mostra todos os vendedores. Se nao tiver cliente que mora no mesmo bairro, mostra null
+Select tdv.BAIRRO, tdv.NOME, tdc.BAIRRO, tdc.NOME from tabela_de_vendedores tdv 
+LEFT JOIN tabela_de_clientes tdc 
+ON tdv.BAIRRO = tdc.BAIRRO;
+
+#Clientes que nao tem vendedores no mesmo bairro mostra null
+Select tdv.BAIRRO, tdv.NOME, tdc.BAIRRO, tdc.NOME from tabela_de_vendedores tdv 
+RIGHT JOIN tabela_de_clientes tdc 
+ON tdv.BAIRRO = tdc.BAIRRO;
+
+#Mostra tudo até Clientes sem vendedores no bairro e Vendedores sem clientes no bairro
+Select tdv.BAIRRO, tdv.NOME, tdc.BAIRRO, tdc.NOME from tabela_de_vendedores tdv 
+LEFT JOIN tabela_de_clientes tdc 
+ON tdv.BAIRRO = tdc.BAIRRO
+UNION
+Select tdv.BAIRRO, tdv.NOME, tdc.BAIRRO, tdc.NOME from tabela_de_vendedores tdv 
+RIGHT JOIN tabela_de_clientes tdc 
+ON tdv.BAIRRO = tdc.BAIRRO;
+
+#UNION
+#Juntando consultas
+SELECT DISTINCT BAIRRO FROM tabela_de_clientes tdc
+UNION
+SELECT DISTINCT BAIRRO FROM tabela_de_vendedores tdv;
+
+#SUBCONSULTA
+
+Select * from tabela_de_clientes tdc WHERE BAIRRO in ('Tijuca','Jardins','Copacabana','Santo Amaro');
+#OU USANDO SUBCONSULTA
+Select * from tabela_de_clientes tdc WHERE BAIRRO in (Select DISTINCT BAIRRO from tabela_de_vendedores tdv );
+
+Select x.EMBALAGEM, x.preco_maximo from 
+(Select Embalagem, Max(preco_de_lista) as preco_maximo from tabela_de_produtos tdp group by EMBALAGEM) x WHERE x.preco_maximo >= 10;
+
+SELECT X.CPF, X.CONTADOR FROM 
+(SELECT CPF, COUNT(*) AS CONTADOR FROM notas_fiscais
+WHERE YEAR(DATA_VENDA) = 2016
+GROUP BY CPF) X WHERE X.CONTADOR > 2000
+
+
+#VIEW
+
+Select x.EMBALAGEM, x.preco_maximo from 
+(Select Embalagem, Max(preco_de_lista) as preco_maximo from tabela_de_produtos tdp group by EMBALAGEM) x WHERE x.preco_maximo >= 10;
+
+
+	
 
