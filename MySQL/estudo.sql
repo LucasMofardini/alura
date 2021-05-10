@@ -148,5 +148,52 @@ Select x.EMBALAGEM, x.preco_maximo from
 (Select Embalagem, Max(preco_de_lista) as preco_maximo from tabela_de_produtos tdp group by EMBALAGEM) x WHERE x.preco_maximo >= 10;
 
 
-	
+#Funçoes
+
+#Funcões de String
+
+select LTRIM('        OLAAAAAAAAAAAA') as Resultado;
+select RTRIM('OLAAAAAAAAA       ') as Resultado;
+Select TRIM('        OLA       ');
+select CONCAT('Ola',' ','Tudo bem?');
+SELECT UPPER('ola tudo bem?');
+SELECT LOWER('OLA TUDO BEM?');
+SELECT SUBSTRING('OLA TUDO BEM?',5);  #Tudo bem?
+SELECT SUBSTRING('OLA TUDO BEM?',5,4); #TUDO
+select CONCAT(NOME, ' ', CPF , ' ') as resultado from tabela_de_clientes;
+SELECT CONCAT(ENDERECO_1, ' ', BAIRRO, ' ', CIDADE,' ',  ESTADO) from tabela_de_clientes tdc ;
+
+
+#Funções de Datas
+
+SELECT CURDATE();
+SELECT CURRENT_TIMESTAMP(); 
+SELECT YEAR(CURRENT_TIMESTAMP());
+SELECT DATEDIFF(CURRENT_TIMESTAMP(), '2021-01-01'); 
+SELECT DATEDIFF(CURRENT_TIMESTAMP(), '2002-09-10'); 
+SELECT DISTINCT DATA_VENDA, DAYNAME(DATA_VENDA) Dia_Mes, MONTHNAME(DATA_VENDA) as Mes, YEAR(DATA_VENDA) as Ano from notas_fiscais nf; 
+
+SELECT NOME, TIMESTAMPDIFF (YEAR, DATA_DE_NASCIMENTO, CURDATE()) AS    IDADE
+FROM  tabela_de_clientes
+
+#Funçoes numéricas
+
+SELECT CEILING (12.333333); # 13
+SELECT ROUND(12.33333);  # 12
+SELECT RAND() * 100;
+
+SELECT YEAR(DATA_VENDA), FLOOR(SUM(IMPOSTO * (QUANTIDADE * PRECO))) 
+FROM notas_fiscais NF
+INNER JOIN itens_notas_fiscais INF ON NF.NUMERO = INF.NUMERO
+WHERE YEAR(DATA_VENDA) = 2016
+GROUP BY YEAR(DATA_VENDA)
+
+#Funções de conversão de dados
+
+#Em string
+SELECT CONCAT('O dia de hoje é : ' , DATE_FORMAT(CURRENT_TIMESTAMP(),'%W, %d/%m/%Y - ') ); 
+SELECT CONVERT (23.3,CHAR);
+
+
+
 
