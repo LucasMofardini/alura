@@ -13,9 +13,10 @@
 // namespace Alura;
 // use Alura\ArrayUtils;
 // use Alura\Calculadora;
-require_once 'src/Alura/ArrayUtils.php';
-require_once 'src/Alura/Calculadora.php';
 
+// require_once 'src/Alura/ArrayUtils.php';
+// require_once 'src/Alura/Calculadora.php';
+require 'autoload.php';
 
 $calculadora = new Calculadora();
 $notas = [9,7,10];
