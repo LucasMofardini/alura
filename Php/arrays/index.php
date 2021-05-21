@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP ARRAY</title>
 </html>
-<?php declare(strict_types=1);
+<?php 
+// declare(strict_types=1);
 // Aula 1
-require_once 'Calculadora.php';
-require_once 'ArrayUtils.php';
+
+// namespace Alura;
+// use Alura\ArrayUtils;
+// use Alura\Calculadora;
+require_once 'src/Alura/ArrayUtils.php';
+require_once 'src/Alura/Calculadora.php';
+
 
 $calculadora = new Calculadora();
 $notas = [9,7,10];

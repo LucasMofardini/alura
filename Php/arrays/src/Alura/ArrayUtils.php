@@ -1,4 +1,6 @@
 <?php declare(strict_types=1);
+// namespace Alura;
+
 class ArrayUtils{
     public static function remover(string $elemento, array &$array){
         $posiçao = array_search($elemento,$array,true);
