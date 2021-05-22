@@ -71,3 +71,63 @@ var_dump($correntistaECompras) ;
 ArrayUtils::remover("12",$correntistaECompras);
 var_dump($correntistaECompras);
 echo "</pre>";
+#--------------
+// Aula 5
+
+$correntistas = [
+    'lucas',
+    'gabriel',
+    'Joana',
+    'Gabriela',
+    'Rodrigo',
+    'Pedro',
+];
+$correntistasNaoPagantes = [
+    'Rodrigo',
+    'Gabriela'
+];
+$correntistasPagantes = array_diff($correntistas, $correntistasNaoPagantes);
+echo "<pre>";
+var_dump($correntistasPagantes);
+echo "</pre>";
+
+$correntistas1 = [
+    "Giovanni",
+    "João",
+    "Maria",
+    "Luis",
+    "Luisa",
+    "Rafael"
+  ];
+  
+  $saldos1 = [
+     2500,
+     3000,
+     4400,
+     1000,
+     8700,
+     9000
+  ];
+$relacionados =   array_combine($correntistas1, $saldos1);
+$relacionados["Lucas"] = 10000;
+echo "<pre>";
+var_dump($relacionados);
+echo "</pre>";
+echo "<p>{$relacionados['João']}</p>";
+echo "<p>{$relacionados['Lucas']}</p>";
+if(array_key_exists("Maria",$relacionados)){
+    echo "<p>{$relacionados['Maria']}</p>";
+}else{
+    echo "Nao foi encontrado";
+}
+
+$array_assoc = [
+    'Lucas' => 2500,
+    'João' => 3000,
+    'Maria' => 1500  
+];
+
+$maiores = ArrayUtils::encontrarPessoasComSaldoMaior(3000,$relacionados);
+echo '<pre>';
+echo var_dump($maiores);
+echo '</pre>';

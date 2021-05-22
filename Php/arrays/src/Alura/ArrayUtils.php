@@ -10,4 +10,13 @@ class ArrayUtils{
             echo "<p> $elemento tem Parametro invalido </p>";
         }
     }
+    public static function encontrarPessoasComSaldoMaior(int $saldo, array $array): array{
+        $correntistasSaldoMaior = array(); 
+        foreach($array as $chave => $valor){
+            if($valor > $saldo){
+                $correntistasSaldoMaior[] = $chave;
+            }
+        }
+        return $correntistasSaldoMaior;
+    }
 }
