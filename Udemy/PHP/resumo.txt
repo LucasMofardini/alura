@@ -1,0 +1,3 @@
+Instalação{
+    sudo apt install php php-mysql php-zip php-curl
+}
