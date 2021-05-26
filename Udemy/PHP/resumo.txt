@@ -1,3 +1,4 @@
 Instalação{
     sudo apt install php php-mysql php-zip php-curl
 }
+PHP -S localhotst:3000
