@@ -4,7 +4,7 @@ function funcao1()
 {
     echo 'Entrei na função 1' . PHP_EOL;
     try {funcao2();}
-    catch(RuntimeException | DivisionByZeroError  $problema){
+    catch(Throwable $problema){
         echo 'Exception de : ' . $problema->getMessage() . ' Na Linha '. $problema->getLine() . ' No CallStack : ' . PHP_EOL . $problema->getTraceAsString() . PHP_EOL;
         // Lançando outra exceção para a main na callstack
         // throw new RuntimeException('Exceção foi tratada, mas, Pega ai', $problema->getCode(), $problema);
