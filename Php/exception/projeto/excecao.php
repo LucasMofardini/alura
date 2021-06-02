@@ -1,10 +1,12 @@
 <?php
+
 /**
  * @throws Exception
  */
-function funcaoQueLancaExcecao(){
+function funcaoQueLancaExcecao()
+{ }
 
-}
-function outraFunction(){
+function outraFuncao()
+{
     funcaoQueLancaExcecao();
 }

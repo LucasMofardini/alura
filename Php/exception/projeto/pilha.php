@@ -3,23 +3,25 @@
 function funcao1()
 {
     echo 'Entrei na função 1' . PHP_EOL;
-    try {funcao2();}
-    catch(Throwable $problema){
-        echo 'Exception de : ' . $problema->getMessage() . ' Na Linha '. $problema->getLine() . ' No CallStack : ' . PHP_EOL . $problema->getTraceAsString() . PHP_EOL;
-        // Lançando outra exceção para a main na callstack
-        // throw new RuntimeException('Exceção foi tratada, mas, Pega ai', $problema->getCode(), $problema);
 
+    try {
+        funcao2();
+    } catch (Throwable $problema) {
+        echo $problema->getMessage() . PHP_EOL;
+        echo $problema->getLine() . PHP_EOL;
+        echo $problema->getTraceAsString() . PHP_EOL;
     }
+
     echo 'Saindo da função 1' . PHP_EOL;
 }
 
 function funcao2()
 {
     echo 'Entrei na função 2' . PHP_EOL;
-    //Criando exceção
-    $exception = new RuntimeException();
-    //Lançar uma exceção
-    throw $exception;
+
+    intdiv(1, 0);
+    throw new BadFunctionCallException('Essa é a mensagem de exceção');
+
     echo 'Saindo da função 2' . PHP_EOL;
 }
 

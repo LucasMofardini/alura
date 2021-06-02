@@ -1,22 +1,22 @@
 <?php
-use Alura\Banco\Modelo\Conta\{ContaPoupanca, ContaCorrente, SaldoInsuficienteException,NomeCurtoException, Titular};
-use Alura\Banco\Modelo\{CPF, Endereco, NomeCurto};
+
+use Alura\Banco\Modelo\Conta\ContaCorrente;
+use Alura\Banco\Modelo\Conta\Titular;
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Endereco;
 
 require_once 'autoload.php';
-try{
+
 $contaCorrente = new ContaCorrente(
     new Titular(
-        new CPF('389.886.878-84'), 
-        'Luc', 
-        new Endereco('Cidade', 'Bairro', 'Rua','Numero')
+        new CPF('123.456.789-10'),
+        'Lucas',
+        new Endereco('Cidade', 'bairro', 'rua', 'numero')
     )
 );
-}catch(NomeCurto $exceptionDomain){
-    $exceptionDomain->getMessage() . PHP_EOL;
+
+try {
+    $contaCorrente->deposita(100);
+} catch (InvalidArgumentException $exception) {
+    echo "Valor a depositar precisa ser positivo, seu ráquer perigoso";
 }
-// try{
-//     $contaCorrente->deposita(100);
-//     echo $contaCorrente->recuperaSaldo() . PHP_EOL;
-// }catch(Exception $exception){
-//     echo "Não pode depositar saldo negativo" . PHP_EOL;
-// }

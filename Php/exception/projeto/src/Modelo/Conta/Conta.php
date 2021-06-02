@@ -2,14 +2,11 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-use DomainException;
-use InvalidArgumentException;
-
 abstract class Conta
 {
-    private $titular;
-    protected $saldo;
-    private static $numeroDeContas = 0;
+    private Titular $titular;
+    protected float $saldo;
+    private static int $numeroDeContas = 0;
 
     public function __construct(Titular $titular)
     {
@@ -38,7 +35,7 @@ abstract class Conta
     public function deposita(float $valorADepositar): void
     {
         if ($valorADepositar < 0) {
-            throw new InvalidArgumentException();
+            throw new \InvalidArgumentException();
         }
 
         $this->saldo += $valorADepositar;
