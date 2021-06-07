@@ -17,6 +17,7 @@ $contaCorrente = new ContaCorrente(
 
 try {
     $contaCorrente->deposita(100);
+    echo "Foi depositado" . PHP_EOL;
 } catch (InvalidArgumentException $exception) {
     echo "Valor a depositar precisa ser positivo, seu ráquer perigoso";
 }
