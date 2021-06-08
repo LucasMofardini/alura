@@ -1,0 +1,1 @@
+É um gerenciador de dependencias para cada projeto
