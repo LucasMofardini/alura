@@ -1,0 +1,12 @@
+{
+    "name": "lucasmofardini/buscador-cursos",
+    "description": "Projeto que busca os cursos no site da Alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Lucas Mofardini",
+            "email": "lucasmofardini@gmail.com"
+        }
+    ],
+    "require": {}
+}
