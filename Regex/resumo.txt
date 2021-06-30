@@ -1,0 +1,5 @@
+//Regex é uma forma de definir uma cadeia de caracteres dentro de uma string. 
+//Exemplos de Regex {
+    - ls | grep -p ".*png"
+    - <div .*>
+}
