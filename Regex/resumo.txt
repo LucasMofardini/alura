@@ -3,3 +3,23 @@
     - ls | grep -p ".*png"
     - <div .*>
 }
+\d = digito, numero;
+\d\d\d = 3 numeros; 
+    Exemplo: 123;
+. = Qualquer caractere;
+\. = ponto final;
+    Exemplo: \d\d\d\. = 123.;
+
+\d{3}\.\d{3}\.\d{3}-\d{2} = 123.456.789-00; //CPF
+\d{2}\.\d{3}\.\d{3}/\d{4}\-\d{2} = 15.123.321/8883-22 //CNPJ
+\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} = 126.1.112.34  128.126.12.244  192.168.0.34 // IP DE COMPUTADOR
+\d{5}\-\d{3} = 05885-620  // CEP 
+\(\d{2}\) \d{4}\-\d{4} =  (21) 3216-2345 //Numero Telefone
+
+//Quando o caractere pode ser opcional, ter o nao ter se coloca o ponto de interrogação '?';
+
+\d{3}\.?\d{3}\.?\d{3}-?\d{2} = 38988687884 //CPF COM OU SEM PONTO E HIFEN
+OU
+\d{3}\.{0,1}\d{3}\.{0,1}\d{3}-{0,1}\d{2} // Mudando o '?' por '{0,1}' 
+
+\d{3}\.{0,1}\d{3}\.{0,1}\d{3}[-.]?\d{2} = 389.886.878.84 ou 389.886.878-84 ou 38988687884 //CPF mais completo
