@@ -37,3 +37,14 @@ OU
 \d{2}h\d{2}min\d{2}s = 19h32min16s //Horario
 [A-Z]{3}-\d{4} = KMG-8089 //Placa de carro
 ^file.+\.html$ = file:///var/www/ares_files/html/Alura/Regex/index.html // Validação
+
+Grupos: ();
+//Voce define um grupo dentro de uma regex;
+
+NonCapturing Group: (?:<regex>)
+//Ao se criar um grupo, voce pode exclui-lo da saída do regex; Não pega-lo.
+
+Exemplo{
+^([\w\s]+)\|(?:\d\d\/\d\d\/\d\d\d\d)\|([\w\s]+)\|(\d{1,4})\|(\d{5}-\d{3})\|(?:[\w\s]{10,})$
+Nico Steppat|14/05/1977|Rua Buarque de Macedo|50|22222-222|Rio de Janeiro
+}
