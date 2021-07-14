@@ -48,3 +48,13 @@ Exemplo{
 ^([\w\s]+)\|(?:\d\d\/\d\d\/\d\d\d\d)\|([\w\s]+)\|(\d{1,4})\|(\d{5}-\d{3})\|(?:[\w\s]{10,})$
 Nico Steppat|14/05/1977|Rua Buarque de Macedo|50|22222-222|Rio de Janeiro
 }
+
+Voce pode deixar o quantifier 'preguiçoso' usando '?', capturando apenas o primeiro 
+ex: \w+?; Ele vai caputurar letra por letra, mais de uma vez. 
+
+Backreferences = Colocar referencia em algum grupo : \1 para o primeiro grupo
+<(h1|h2)\s+.+?>([\s\wõ]+)</\1>
+
+Quando nao queremos algo  se coloca o '^' antes; 
+Ex : [^Z\d] para Z171PZ7AZ23PZ7819AZ78GZ1AZ99IZ34O
+e sairia :  P A P A G A I O, pois nao teria a letra z nem numeros
