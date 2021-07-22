@@ -1,0 +1,15 @@
+<html>
+<script>
+	var target = '11a23b41n';
+    var exp  = /(\d\d)(\w)/g;
+    var resultado = null;
+    while(resultado = exp.exec(target)){
+        console.log(resultado);
+    }
+
+    var anoMesDia = '2007-12-31';
+    var exp2 = /-/g;
+    anoMesDia = anoMesDia.replace(exp2, '/');
+</script>
+
+</html>
