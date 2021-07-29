@@ -1,28 +1,44 @@
 class Cliente{
     nome;
     cpf;
-    agencia;
-    saldo;
- 
 }
+class ContaCorrente{
+    agencia;
+    //Proposta de implementação de campos privados em JS https://github.com/tc39/proposal-class-fields#private-fields
+    _saldo = 0;
 
+    sacar(valorSaque){
+           
+        if(valorSaque > this._saldo){
+            return;
+        }   
+        this._saldo -= valorSaque;
+        return valorSaque;
+    }
+    
+    depositar(valorDeposito){
+        if(valorDeposito <= 0){
+            return;
+        }
+        this._saldo += valorDeposito;
+        return valorDeposito;
+    }
+    mostraSaldo(){
+        return this._saldo;
+    }
+}
 const cliente1 = new Cliente();
-const cliente2 = new Cliente();
-
 cliente1.nome = "Ricardo";
 cliente1.cpf = 11122233309;
-cliente1.agencia = 1001;
-cliente1.saldo = 0;
 
-
+const cliente2 = new Cliente();
 cliente2.nome = "Alice";
 cliente2.cpf = 88822233309;
-cliente2.agencia = 1001;
-cliente2.saldo = 0;
 
+const contaCorrenteLucas = new ContaCorrente();
+contaCorrenteLucas.agencia = 1001;
 
-const cliente3Nome = "Alice";
-const cliente3CPF = 88822233309;
-const cliente3Agencia = 1001;
-const cliente3Saldo = 0;
-console.log(cliente1, cliente2);
+contaCorrenteLucas.depositar(2300);
+contaCorrenteLucas.sacar(300);
+console.log(contaCorrenteLucas.mostraSaldo());
+console.log(contaCorrenteLucas);
