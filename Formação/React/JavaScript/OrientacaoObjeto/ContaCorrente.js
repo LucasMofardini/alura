@@ -1,9 +1,10 @@
 import { Cliente } from './Cliente.js';
 export class ContaCorrente{
- 
+    static numeroDeContas = 0;
     agencia;
     _cliente;
-    
+    //Proposta de implementação de campos privados em JS https://github.com/tc39/proposal-class-fields#private-fields
+    _saldo = 0;
     set cliente(novoCliente){
         if(novoCliente instanceof Cliente){
             this._cliente = novoCliente;
@@ -12,9 +13,14 @@ export class ContaCorrente{
     get cliente(){
         return this._cliente;
     }
-    //Proposta de implementação de campos privados em JS https://github.com/tc39/proposal-class-fields#private-fields
-    _saldo = 0;
-
+    get saldo(){
+        return this._saldo;
+    }
+    constructor(cliente, agencia){
+        this.agencia = agencia;
+        this.cliente = cliente;
+        ContaCorrente.numeroDeContas++;
+    }
     sacar(valorSaque){
            
         if(valorSaque > this._saldo){
@@ -32,9 +38,6 @@ export class ContaCorrente{
         return valorDeposito;
     }
     mostraSaldo(){
-        return this._saldo;
-    }
-    get saldo(){
         return this._saldo;
     }
     transferir(valor, conta){
