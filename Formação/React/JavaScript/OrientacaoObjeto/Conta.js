@@ -5,8 +5,22 @@ export class Conta{
         this._cliente = cliente;
         this._agencia = agencia;
     }
+    set cliente(novoCliente){
+        if(novoCliente instanceof Cliente){
+            this._cliente = novoCliente;
+        }
+    }
+
+    get cliente(){
+        return this._cliente;
+    }
+
+    get saldo(){
+        return this._saldo;
+    }
+
     sacar(valorSaque){
-           
+
         if(valorSaque > this._saldo){
             return;
         }   
