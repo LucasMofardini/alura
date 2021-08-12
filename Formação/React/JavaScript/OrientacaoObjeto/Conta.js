@@ -21,13 +21,19 @@ export class Conta{
 
     sacar(valorSaque){
 
-        if(valorSaque > this._saldo){
-            return;
-        }   
-        this._saldo -= valorSaque;
-        return valorSaque;
+        let taxa = 1;
+        return  this._sacar(valorSaque, taxa);
     }
-    
+    _sacar(valorSaque, taxa){
+
+        let valorAplicado = taxa * valorSaque;
+
+        if(this._saldo >= valorAplicado){
+            this._saldo -= valorAplicado;
+            return valorAplicado;
+        }    
+        return 0;
+    }
     depositar(valorDeposito){
         if(valorDeposito <= 0){
             return;
