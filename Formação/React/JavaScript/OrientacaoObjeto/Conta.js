@@ -1,9 +1,16 @@
+//Classe abstrata que define os métodos e propriedades da classe Conta.
 export class Conta{
 
     constructor(saldoInicial,cliente,agencia){
+
+        if (this.constructor == Conta) {
+            throw new Error("Não é permitido instanciar da classe Conta Diretamente");
+        }
+
         this._saldo  = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
+
     }
     set cliente(novoCliente){
         if(novoCliente instanceof Cliente){
@@ -19,11 +26,11 @@ export class Conta{
         return this._saldo;
     }
 
+    //Método abstrato
     sacar(valorSaque){
-
-        let taxa = 1;
-        return  this._sacar(valorSaque, taxa);
+        throw new Error("Método sacar não implementado");
     }
+    
     _sacar(valorSaque, taxa){
 
         let valorAplicado = taxa * valorSaque;
