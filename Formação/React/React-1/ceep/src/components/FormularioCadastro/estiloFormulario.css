@@ -1,0 +1,33 @@
+.form-cadastro{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 300px;
+}
+.form-cadastro input, .form-cadastro textarea,.form-cadastro button{
+    background-color: lightgray;
+    margin: 10px;
+    padding: 10px;
+    color: gray;
+    border: none;
+    border-radius: 3px;
+   outline: none;
+   border: 1px solid lightgray;
+}
+.form-cadastro input:focus, .form-cadastro textarea:focus{
+    border: 1px solid black;
+}
+.form-cadastro input{
+    font-size: 1.2rem;
+    
+}
+.form-cadastro textarea{
+    font-size: 1.2rem;
+    resize:vertical;
+}
+.form-cadastro button{
+    font-size: 1.2rem;
+    padding: 10px 0;
+    width: 200px;
+    align-self: flex-end;
+}
