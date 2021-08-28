@@ -54,3 +54,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.container-section{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	position: relative;
+	border: 1px solid lightgray;
+}
+.container-section .div-hr{
+	border-left: 1px solid lightgray;
+}

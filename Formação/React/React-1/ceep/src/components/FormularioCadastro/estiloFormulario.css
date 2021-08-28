@@ -1,7 +1,7 @@
 .form-cadastro{
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 45px auto;
     width: 300px;
 }
 .form-cadastro input, .form-cadastro textarea,.form-cadastro button{
@@ -30,4 +30,11 @@
     padding: 10px 0;
     width: 200px;
     align-self: flex-end;
+}
+.form-cadastro button{
+    cursor: pointer;
+    transition: .2s; /* Animation */
+}
+.form-cadastro button:hover{
+    transform: scale(1.1);
 }
