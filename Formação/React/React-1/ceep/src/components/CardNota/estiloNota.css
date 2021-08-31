@@ -8,6 +8,11 @@
     padding: 0px 0;
     background-color: lightgray;
     color: gray;
+    position: relative;
+    transition: 0.2s;
+}
+.card-nota:hover{
+transform: scale(1.1);
 }
 .card-nota header{
     font-size: 1.2rem;
@@ -26,4 +31,23 @@
 .card-nota p::before{
     content: " • ";
     color: gray;
+}
+.card-nota:hover .section-delete{
+    display: block;
+        
+}
+.card-nota .section-delete{
+    display: none;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    fill: white;
+    background-color: Navy;
+    padding: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.card-nota .section-delete:hover{
+    transform: scale(1.1);
 }
