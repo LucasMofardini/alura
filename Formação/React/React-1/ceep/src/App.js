@@ -27,10 +27,13 @@ class App extends Component {
     arrayNotas.splice(index,1);
     this.setState({notas: arrayNotas});
   }
+  apagarTudo(){
+    this.setState({notas: []});
+  }
   render() {
     return (
       <section className="container-section">
-        <FormularioCadastro criarNota={this.criarNota.bind(this)} />
+        <FormularioCadastro criarNota={this.criarNota.bind(this)} apagarTudo={this.apagarTudo.bind(this)}  />
         <div className="div-hr"/>
         <ListaDeNotas notas={this.state.notas} apagarNota={this.deletarNota.bind(this)}  />
       </section>

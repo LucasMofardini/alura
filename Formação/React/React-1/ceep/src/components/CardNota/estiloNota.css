@@ -21,7 +21,8 @@ transform: scale(1.1);
     border-radius: 3px;
     display: flex;
     background-color: Navy;
-    color:lightgray
+    color:lightgray;
+    user-select: none;
 }
 
 .card-nota p {
@@ -50,4 +51,17 @@ transform: scale(1.1);
 }
 .card-nota .section-delete:hover{
     transform: scale(1.1);
+}
+.card-nota .section-index{
+    font-size: 10px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    user-select: none;
+}
+
+@media (max-width: 800px){
+    .card-nota .section-delete:hover{
+        transform: scale(1.0);
+    }
 }
