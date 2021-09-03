@@ -65,3 +65,6 @@ table {
 .container-section .div-hr{
 	border-left: 1px solid lightgray;
 }
+.main-content{
+	width: 1480px;
+}

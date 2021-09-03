@@ -1,0 +1,39 @@
+.container-categoria {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.container-categoria ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+.container-categoria ul li{
+    margin: 10px 45px;
+    padding: 5px;
+    background-color: navy;
+    color: lightgray;
+    border-radius: 3px;
+    user-select: none;
+    transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+}
+.container-categoria ul li:hover{
+    transform: scale(1.05);
+}
+.container-categoria > div{
+    margin: 10px 45px;
+    padding: 5px;
+}
+.container-categoria > div input{
+    font-size: 1.2rem;
+    background-color: lightgray;
+    padding: 10px;
+    color: gray;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid lightgray;
+}
