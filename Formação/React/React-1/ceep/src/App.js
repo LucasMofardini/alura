@@ -12,10 +12,11 @@ class App extends Component {
       categorias: [],
     };
   }
-  criarNota(titulo, texto){
+  criarNota(titulo, texto, categoria){
     const novaNota = {
       titulo,
-      texto
+      texto,
+      categoria
     }
     const novoArrayNotas = [...this.state.notas, novaNota]
     const novoEstado = {
@@ -40,7 +41,7 @@ class App extends Component {
   render() {
     return (
       <section className="container-section">
-        <FormularioCadastro criarNota={this.criarNota.bind(this)} apagarTudo={this.apagarTudo.bind(this)}  />
+        <FormularioCadastro categorias={this.state.categorias} criarNota={this.criarNota.bind(this)} apagarTudo={this.apagarTudo.bind(this)}  />
         <div className="div-hr"/>
         <main className="main-content">
           <ListaDeCategorias categorias={this.state.categorias} adicionarCategoria={this.adicionarCategoria.bind(this)} />

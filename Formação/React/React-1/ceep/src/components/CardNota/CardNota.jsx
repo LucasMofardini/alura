@@ -12,6 +12,7 @@ class CardNota extends Component {
       <section className="card-nota">
         <div className="section-delete" onClick={this.apagar.bind(this)}><DeleteSVG/></div>
         <div className="section-index">{this.props.indice + 1}</div>
+        <h4>{this.props.categoria}</h4>
         <header>
           <h3>{this.props.titulo}</h3>
         </header>
