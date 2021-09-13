@@ -13,17 +13,15 @@ class App extends Component {
     this.notas = new ArrayDeNotas();
   }
 
-  // apagarTudo(){
-  //   this.setState({notas: [], categorias: []});
-  // }
+
   render() {
     return (
       <section className="container-section">
-        <FormularioCadastro categorias={this.categorias.categorias} criarNota={this.notas.adicionarNota}  />
+        <FormularioCadastro categorias={this.categorias} criarNota={this.notas.adicionarNota.bind(this.notas)}  />
         <div className="div-hr"/>
         <main className="main-content">
-          <ListaDeCategorias categorias={this.categorias.categorias} adicionarCategoria={this.categorias.adicionarCategoria} />
-          <ListaDeNotas notas={this.notas.notas} apagarNota={this.notas.apagarNota}  /> 
+          <ListaDeCategorias categorias={this.categorias} adicionarCategoria={this.categorias.adicionarCategoria.bind(this.categorias)} />
+          <ListaDeNotas notas={this.notas} apagarNota={this.notas.apagarNota.bind(this.notas)}  /> 
         </main>
       </section>
     );
