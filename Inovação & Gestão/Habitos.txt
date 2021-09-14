@@ -1,0 +1,15 @@
+Tirar os planos das ideias e colocar em açao em um lugar que utiliza frequentemente.
+Tenha objetivos e metas.
+Objetivo - O que eu quero alcançar lá na frente 
+Meta - Ações que prentendo fazer par alcançar meu objetivo
+{
+    Objetivo : Estudar T.I.
+    Meta : Finalizar um módulo por dia.
+
+    Objetivo : Estudar para o ENEM.
+    Meta : Video Aulas, Youtube, 30 minutos por dia.
+
+    Objetivo : Correr.
+    Meta : Toda manhã após acordar, 30 minutos.
+}
+3 Componentes do hábitos : 'Deixa' , 'Rotina', 'Recompensa'.
