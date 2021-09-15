@@ -5,11 +5,17 @@ Meta - Ações que prentendo fazer par alcançar meu objetivo
 {
     Objetivo : Estudar T.I.
     Meta : Finalizar um módulo por dia.
+    Linguagem : JavaScript - Front e Back, SQL.
+    Mas por quê : Crescimento profissional e troca de área de trabalho .
+    Mensurar : Fazer Formação React do Alura, Formação Node do Alura.
+    Tempo : 2,5 meses, Até o final do ao de 2021.
 
-    Objetivo : Estudar para o ENEM.
+    Objetivo : Estudar para o ENEM, (Redação e Mátematica).
     Meta : Video Aulas, Youtube, 30 minutos por dia.
 
     Objetivo : Correr.
     Meta : Toda manhã após acordar, 30 minutos.
 }
 3 Componentes do hábitos : 'Deixa' , 'Rotina', 'Recompensa'.
+
+Tentar tirar as coisas do automático e fazê-la virar Hábitos.
