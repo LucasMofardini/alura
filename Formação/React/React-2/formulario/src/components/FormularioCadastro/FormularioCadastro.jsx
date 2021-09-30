@@ -2,12 +2,13 @@ import React, {useState} from "react";
 // import Button from '@mui/material/Button'
 import { TextField, Button, Switch, FormControlLabel } from "@mui/material";
 
-function FormularioCadastro({aoEnviar}) {
+function FormularioCadastro({aoEnviar, validarCPF, validaNome}) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
   const [promocoes, setPromocoes] = useState(true);
   const [novidades, setNovidades] = useState(true);
+  const [erros, setErros] = useState({cpf:{valido:true, texto:""}});
 
   return (
     <form
@@ -40,9 +41,16 @@ function FormularioCadastro({aoEnviar}) {
       />
 
       <TextField
+        value={cpf}
          onChange={(event) => {
           setCpf(event.target.value);
-      }}
+        }}
+        onBlur={(event)=>{
+          const ehValido = validarCPF(event.target.value);
+          setErros({cpf:ehValido});
+        }}
+        error={!erros.cpf.valido}
+        helperText={erros.cpf.texto}
         id="cpf"
         label="Cpf"
         variant="outlined"
