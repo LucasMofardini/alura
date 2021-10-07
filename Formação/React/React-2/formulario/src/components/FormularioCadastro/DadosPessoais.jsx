@@ -2,7 +2,7 @@ import React, {useState} from "react";
 // import Button from '@mui/material/Button'
 import { TextField, Button, Switch, FormControlLabel } from "@mui/material";
 
-function DadosPessoais({aoEnviar, validarCPF, validaNome}) {
+function DadosPessoais({aoEnviar, validarCPF}) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
@@ -28,6 +28,7 @@ function DadosPessoais({aoEnviar, validarCPF, validaNome}) {
         variant="outlined"
         margin="normal"
         fullWidth
+        required
       />
 
       <TextField
@@ -40,6 +41,7 @@ function DadosPessoais({aoEnviar, validarCPF, validaNome}) {
         variant="outlined"
         margin="normal"
         fullWidth
+        required
       />
 
       <TextField
@@ -58,6 +60,7 @@ function DadosPessoais({aoEnviar, validarCPF, validaNome}) {
         variant="outlined"
         margin="normal"
         fullWidth
+        required
       />
 
       <FormControlLabel
@@ -66,7 +69,8 @@ function DadosPessoais({aoEnviar, validarCPF, validaNome}) {
           checked={promocoes}
           onChange={(event)=>{
           setPromocoes(event.target.checked);
-        }} name="promocoes" defaultChecked={promocoes}  color="primary" />}
+        }} name="promocoes" defaultChecked={promocoes}  color="primary" required />}
+        
       /> 
 
       <FormControlLabel
@@ -75,7 +79,7 @@ function DadosPessoais({aoEnviar, validarCPF, validaNome}) {
           checked={novidades}
           onChange={(event)=>{
           setNovidades(event.target.checked);
-        }} name="Novidades" defaultChecked={novidades}  color="primary" />}
+        }} name="Novidades" defaultChecked={novidades}  color="primary" required />}
       />
 
       <Button variant="contained" type="submit">

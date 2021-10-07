@@ -1,16 +1,23 @@
-import React, { Fragment, useState } from 'react'
-import DadosEntrega from './DadosEntrega'
-import DadosPessoais from './DadosPessoais'
-import DadosUsuario from './DadosUsuario'
+import React, { Fragment, useState } from 'react';
+import DadosEntrega from './DadosEntrega';
+import DadosPessoais from './DadosPessoais';
+import DadosUsuario from './DadosUsuario';
 
 function FormularioCadastro({ aoEnviar, validarCPF }) {
-  return (
-    <Fragment>
-      <DadosPessoais aoEnviar={aoEnviar} validarCPF={validarCPF} />
-      <DadosUsuario />
-      <DadosEntrega />
-    </Fragment>
-  )
+  const [etapaAtual, setEtapaAtual] = useState(0);
+
+  const formularios = [<DadosUsuario aoEnviar={proximo} />,
+  <DadosPessoais aoEnviar={proximo} validarCPF={validarCPF} />,
+  <DadosEntrega aoEnviar={aoEnviar} />];
+
+
+  function proximo() {
+    setEtapaAtual(etapaAtual + 1);
+  }
+
+  return <Fragment>
+    {formularios[etapaAtual]}
+  </Fragment>
 }
 
-export default FormularioCadastro
+export default FormularioCadastro;
