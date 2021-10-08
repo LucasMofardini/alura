@@ -1,27 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 // import Button from '@mui/material/Button'
-import { TextField, Button, Switch, FormControlLabel } from "@mui/material";
+import { TextField, Button, Switch, FormControlLabel, Box } from "@mui/material";
 
-function DadosPessoais({aoEnviar, validarCPF}) {
+function DadosPessoais({ aoEnviar, validarCPF }) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
   const [promocoes, setPromocoes] = useState(true);
   const [novidades, setNovidades] = useState(true);
   const [erros, setErros] = useState(
-    {cpf:{valido:true, texto:""}}
-    );
+    { cpf: { valido: true, texto: "" } }
+  );
 
   return (
     <form
-     onSubmit={(event) => {
-        event.preventDefault();   
-        aoEnviar({nome, sobrenome, cpf, novidades, promocoes});
-    }}>
+      onSubmit={(event) => {
+        event.preventDefault();
+        aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
+      }}>
       <TextField
         value={nome}
         onChange={(event) => {
-            setNome(event.target.value);
+          setNome(event.target.value);
         }}
         id="nome"
         label="Nome"
@@ -34,7 +34,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
       <TextField
         value={sobrenome}
         onChange={(event) => {
-            setSobrenome(event.target.value);
+          setSobrenome(event.target.value);
         }}
         id="sobrenome"
         label="Sobrenome"
@@ -46,12 +46,12 @@ function DadosPessoais({aoEnviar, validarCPF}) {
 
       <TextField
         value={cpf}
-         onChange={(event) => {
+        onChange={(event) => {
           setCpf(event.target.value);
         }}
-        onBlur={(event)=>{
+        onBlur={(event) => {
           const ehValido = validarCPF(event.target.value);
-          setErros({cpf:ehValido});
+          setErros({ cpf: ehValido });
         }}
         error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
@@ -67,24 +67,26 @@ function DadosPessoais({aoEnviar, validarCPF}) {
         label="Promoções"
         control={<Switch
           checked={promocoes}
-          onChange={(event)=>{
-          setPromocoes(event.target.checked);
-        }} name="promocoes" defaultChecked={promocoes}  color="primary" required />}
-        
-      /> 
+          onChange={(event) => {
+            setPromocoes(event.target.checked);
+          }} name="promocoes" defaultChecked={promocoes} color="primary" />}
+
+      />
 
       <FormControlLabel
         label="Novidades"
         control={<Switch
           checked={novidades}
-          onChange={(event)=>{
-          setNovidades(event.target.checked);
-        }} name="Novidades" defaultChecked={novidades}  color="primary" required />}
+          onChange={(event) => {
+            setNovidades(event.target.checked);
+          }} name="Novidades" defaultChecked={novidades} color="primary" />}
       />
 
-      <Button variant="contained" type="submit">
-        Cadastrar
-      </Button>
+      <Box mt={2}>
+        <Button variant="contained" color="primary" type="submit" margin="normal">
+          Cadastrar
+        </Button>
+      </Box>
     </form>
   );
 }
