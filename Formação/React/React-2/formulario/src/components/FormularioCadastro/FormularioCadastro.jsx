@@ -10,7 +10,7 @@ function FormularioCadastro({ aoEnviar }) {
   const [dadosColetados, setDados] = useState({});
 
   useEffect(() => {
-    if (etapaAtual == formularios.length - 1) {
+    if (etapaAtual === formularios.length - 1) {
       aoEnviar(dadosColetados);
     }
     // O useEffect é chamado quando o componente é:
