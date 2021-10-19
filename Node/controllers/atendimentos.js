@@ -13,4 +13,5 @@ module.exports = app => {
         console.log(req.body);
         res.send('Voce está na rota de atendimentos e está realizando um POST');
     });
+    // O post ele devolve os argumentos passados pelo postman
 }

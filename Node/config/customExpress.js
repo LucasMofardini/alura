@@ -10,6 +10,7 @@ module.exports = () => {
     }));
     app.use(bodyParser.json());
     //Todo controller que for colocado na pasta controller vai ser requerido no app
+
     consign()
         .include('controllers')
         .into(app);
