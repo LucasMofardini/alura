@@ -1,3 +1,4 @@
+const Atendimento = require('../models/atendimentos.js')
 module.exports = app => {
     //Duas rotas : GET e SET para o '/atendimentos'
 
@@ -10,7 +11,8 @@ module.exports = app => {
 
     // enviando dados no diretorio atendimentos
     app.post('/atendimentos', (req, res) => {
-        console.log(req.body);
+        const atendimento = req.body;
+        Atendimento.adiciona(atendimento);
         res.send('Voce está na rota de atendimentos e está realizando um POST');
     });
     // O post ele devolve os argumentos passados pelo postman
