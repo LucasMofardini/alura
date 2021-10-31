@@ -12,8 +12,8 @@ module.exports = app => {
     // enviando dados no diretorio atendimentos
     app.post('/atendimentos', (req, res) => {
         const atendimento = req.body;
-        Atendimento.adiciona(atendimento);
-        res.send('Voce está na rota de atendimentos e está realizando um POST');
+        Atendimento.adiciona(atendimento, res);
+
     });
     // O post ele devolve os argumentos passados pelo postman
 }
