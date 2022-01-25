@@ -50,25 +50,9 @@ function Titulo(props) {
         </>
     );
 }
-// function HomePage() {
-//     function testef(arg, arg2) {
-//         return (
-//             console.log(arg, arg2().toString())
-//         )
-//     }
-//     return (
-//         <div>
-//             <GlobalStyle />
-//             <Titulo fTese={testef} tag="h1">Bem vindo ao nosso discord!</Titulo>
-//         </div>
 
-//     )
-// }
-
-
-// export default HomePage
 export default function PaginaInicial() {
-    const username = 'peas';
+    const username = 'lucasmofardini';
 
     return (
         <>
@@ -76,8 +60,8 @@ export default function PaginaInicial() {
             <Box
                 styleSheet={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    backgroundColor: appConfig.theme.colors.primary[500],
-                    backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+                    backgroundColor: appConfig.theme.colors.primary['500'],
+                    backgroundImage: 'url(https://i.pinimg.com/originals/bd/8d/b6/bd8db6e6d336033e654188d56812e779.jpg)',
                     backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
                 }}
             >
@@ -128,7 +112,7 @@ export default function PaginaInicial() {
                                 contrastColor: appConfig.theme.colors.neutrals["000"],
                                 mainColor: appConfig.theme.colors.primary[500],
                                 mainColorLight: appConfig.theme.colors.primary[400],
-                                mainColorStrong: appConfig.theme.colors.primary[600],
+                                mainColorStrong: appConfig.theme.colors.primary.black,
                             }}
                         />
                     </Box>
