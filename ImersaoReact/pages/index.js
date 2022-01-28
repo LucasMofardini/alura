@@ -30,6 +30,7 @@ export default function PaginaInicial() {
     const [username, setUsername] = useState('');
     const roteamento = useRouter();
 
+
     useEffect(() => {
         if (username) {
             document.title = username;
@@ -87,8 +88,8 @@ export default function PaginaInicial() {
                             onChange={(event) => {
                                 // Vai pegar o que ele digitou e colocar setar o username,
                                 // que vai trocar a foto do github e o nome em baixo
-
                                 setUsername(event.target.value);
+
 
                                 console.log(username.length)
 
@@ -182,6 +183,8 @@ export default function PaginaInicial() {
                     </Box>
                     {/* Photo Area */}
                 </Box>
+
+
             </Box>
         </>
     );

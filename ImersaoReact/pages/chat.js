@@ -103,6 +103,22 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
+                        <Button
+                            onClick={(event) => {
+                                event.preventDefault();
+                                handleNovaMensagem(mensagem);
+                            }}
+                            styleSheet={{
+                                fontSize: '16px'
+                            }}
+                            buttonColors={{
+                                contrastColor: appConfig.theme.colors.neutrals["000"],
+                                mainColor: appConfig.theme.colors.primary[500],
+                                mainColorLight: appConfig.theme.colors.primary[400],
+                                mainColorStrong: appConfig.theme.colors.primary.black,
+                            }}
+                            iconName='arrowRight' />
+
                     </Box>
                 </Box>
             </Box>
@@ -191,7 +207,6 @@ function MessageList(props) {
                     </Text>
                 )
             })}
-
         </Box>
     )
 }
