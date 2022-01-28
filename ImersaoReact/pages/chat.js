@@ -140,6 +140,7 @@ function MessageList(props) {
                 flex: 1,
                 color: appConfig.theme.colors.neutrals["000"],
                 marginBottom: '16px',
+                overflow: 'hidden'
             }}
         >
             {props.mensagens.map((mensagem) => {
@@ -159,6 +160,7 @@ function MessageList(props) {
                         <Box
                             styleSheet={{
                                 marginBottom: '8px',
+
                             }}
                         >
                             <Image
@@ -169,7 +171,7 @@ function MessageList(props) {
                                     display: 'inline-block',
                                     marginRight: '8px',
                                 }}
-                                src={`https://github.com/vanessametonini.png`}
+                                src={`https://github.com/lucasmofardini.png`}
                             />
                             <Text tag="strong">
                                 {mensagem.de}
