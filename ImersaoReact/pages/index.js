@@ -1,5 +1,6 @@
 import appConfig from '../config.json';
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
+import { useState } from 'react';
 
 function GlobalStyle() {
     return (
@@ -30,7 +31,6 @@ function GlobalStyle() {
     )
 }
 function Titulo(props) {
-    console.log(props);
     const Tag = props.tag || 'h1';
 
     return (
@@ -52,7 +52,9 @@ function Titulo(props) {
 }
 
 export default function PaginaInicial() {
-    const username = 'lucasmofardini';
+
+
+    const [username, setUsername] = useState('lucasmofardini');
 
     return (
         <>
@@ -93,7 +95,16 @@ export default function PaginaInicial() {
                             {appConfig.name}
                         </Text>
 
+
                         <TextField
+                            //Quando o usuario digitar qualquer caractere
+                            onChange={(event) => {
+                                // Vai pegar o que ele digitou e colocar setar o username,
+                                // que vai trocar a foto do github e o nome em baixo
+
+                                setUsername(event.target.value);
+                            }}
+                            value={username}
                             fullWidth
                             textFieldColors={{
                                 neutral: {
@@ -120,6 +131,7 @@ export default function PaginaInicial() {
 
 
                     {/* Photo Area */}
+
                     <Box
                         styleSheet={{
                             display: 'flex',
@@ -135,6 +147,7 @@ export default function PaginaInicial() {
                             minHeight: '240px',
                         }}
                     >
+
                         <Image
                             styleSheet={{
                                 borderRadius: '50%',
@@ -153,6 +166,28 @@ export default function PaginaInicial() {
                         >
                             {username}
                         </Text>
+                        <Button
+                            href={`https://github.com/${username}`}
+                            label={
+                                `${username}`
+                            }
+                            iconName="github"
+                            buttonColors={{
+                                contrastColor: appConfig.theme.colors.neutrals["000"],
+                                mainColor: appConfig.theme.colors.primary.black,
+                                mainColorLight: appConfig.theme.colors.primary[400],
+                                mainColorStrong: appConfig.theme.colors.primary[500],
+                            }}
+                            size='sm'
+                            styleSheet={{
+                                marginTop: '20px',
+                                marginLeft: '20px',
+                                marginRight: '20px',
+                                fontSize: '30px',
+                                userSelect: 'none'
+                            }}
+
+                        />
                     </Box>
                     {/* Photo Area */}
                 </Box>
