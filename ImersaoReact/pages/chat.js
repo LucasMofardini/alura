@@ -6,7 +6,7 @@ import { createClient } from '@supabase/supabase-js'
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzY2MTA5NiwiZXhwIjoxOTU5MjM3MDk2fQ.2RI4sZrhdeWi5VWnmvnMfwmb6O68ZTP0nh_jsyfCMRg';
 const SUPABASE_URL = 'https://nnrtzcqguqdqwuzhhwmu.supabase.co';
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
+const MINIMO_PARA_ENVIAR = 0;
 
 
 
@@ -110,7 +110,11 @@ export default function ChatPage() {
                             onKeyPress={(event) => {
                                 if (event.key === 'Enter') {
                                     event.preventDefault();
-                                    handleNovaMensagem(mensagem);
+                                    // Com esse if o usuario nao consegue enviar mensagem com espaço nem com nada escrito
+                                    if (mensagem.trim().length > MINIMO_PARA_ENVIAR) {
+                                        handleNovaMensagem(mensagem);
+                                    }
+
                                 }
 
                             }}
