@@ -41,7 +41,9 @@ export default function PaginaInicial() {
     });
 
     return (
+
         <>
+
             <Box
                 styleSheet={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
