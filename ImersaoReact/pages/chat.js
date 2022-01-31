@@ -1,27 +1,52 @@
 import { Box, Text, TextField, Image, Button } from '@skynexui/components';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import appConfig from '../config.json';
+import { createClient } from '@supabase/supabase-js'
+
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzY2MTA5NiwiZXhwIjoxOTU5MjM3MDk2fQ.2RI4sZrhdeWi5VWnmvnMfwmb6O68ZTP0nh_jsyfCMRg';
+const SUPABASE_URL = 'https://nnrtzcqguqdqwuzhhwmu.supabase.co';
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
+
 
 export default function ChatPage() {
-
     const [mensagem, setMensagem] = useState('');
     const [listaDeMensagem, setListaDeMensagens] = useState([]);
+    useEffect(() => {
+        supabaseClient
+            .from('mensagens')
+            .select('*')
+            .order('id', { ascending: false })
+            .then(({ data }) => {
+                console.log('Dados da consulta : ', data);
+                setListaDeMensagens(data);
+            });
 
-    /*
-    --  Usuario Digita no input e aperta enter para enviar
+    }, []);
 
-    */
+
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
-            texto: novaMensagem,
             de: 'lucasmofardini',
-            id: listaDeMensagem.length + 1
-        }
-        setListaDeMensagens([
+            texto: novaMensagem,
 
-            mensagem,
-            ...listaDeMensagem,
-        ]);
+        };
+        supabaseClient
+            .from('mensagens')
+            .insert([
+                // Tem que ter os mesmos campos do supabase
+                mensagem
+            ])
+            .then(({ data }) => {
+                console.log(data[0])
+                setListaDeMensagens([
+                    data[0],
+                    ...listaDeMensagem,
+                ]);
+            });
+
+
         setMensagem('');
     }
     return (
@@ -85,7 +110,6 @@ export default function ChatPage() {
                             onKeyPress={(event) => {
                                 if (event.key === 'Enter') {
                                     event.preventDefault();
-                                    console.log(event);
                                     handleNovaMensagem(mensagem);
                                 }
 
@@ -145,7 +169,6 @@ function Header() {
 }
 
 function MessageList(props) {
-    console.log('MessageList', props);
     return (
         <Box
             tag="ul"
@@ -187,7 +210,7 @@ function MessageList(props) {
                                     display: 'inline-block',
                                     marginRight: '8px',
                                 }}
-                                src={`https://github.com/lucasmofardini.png`}
+                                src={`https://github.com/${mensagem.de}.png`}
                             />
                             <Text tag="strong">
                                 {mensagem.de}
