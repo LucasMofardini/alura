@@ -42,7 +42,9 @@ export default function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
       <Head>
         <link rel="shortcut icon" href="/pngegg.png" />
+        <title>Discord - Vagabond</title>
       </Head>
+
     </>
   )
 
