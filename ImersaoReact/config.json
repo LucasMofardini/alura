@@ -14,7 +14,8 @@
                 "800": "#0E5814",
                 "900": "#05400A",
                 "mediumblue": "#4169E1",
-                "black": "black"
+                "black": "black",
+                "red": "#d11507"
             },
             "neutrals": {
                 "000": "#FFFFFF",

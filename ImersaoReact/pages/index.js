@@ -93,7 +93,7 @@ export default function PaginaInicial() {
                                 setUsername(event.target.value);
 
 
-                                console.log(username.length)
+                                console.log(username.length);
 
                             }}
                             value={username}

@@ -28,8 +28,27 @@ function GlobalStyle() {
         }
         #box-mensagens::-webkit-scrollbar {
           width: 0px;
-      }
+        }
+        #img-github-user{
+          transition: transform .3s; 
+          cursor: pointer;
+        }
+        #img-github-user:hover {
+          transform:scale(1.5);
+        }
+        .box-git-image{
+          border: 1px solid blue;
+          position: absolute;
+          top: -60px;
+          padding: 20px 5px; 
+          display:none;
+
+        }
+        .box-git-image.ativo{
+          border: 1px solid green;
+        }
         /* ./App fit Height */ 
+
       `}</style>
     </>
   )

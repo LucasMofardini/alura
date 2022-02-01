@@ -6,13 +6,16 @@ import { createClient } from '@supabase/supabase-js'
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzY2MTA5NiwiZXhwIjoxOTU5MjM3MDk2fQ.2RI4sZrhdeWi5VWnmvnMfwmb6O68ZTP0nh_jsyfCMRg';
 const SUPABASE_URL = 'https://nnrtzcqguqdqwuzhhwmu.supabase.co';
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-const MINIMO_PARA_ENVIAR = 0;
+
+const MINIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM = 0;
+const MAXIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM = 50;
 
 
 
 export default function ChatPage() {
     const [mensagem, setMensagem] = useState('');
     const [listaDeMensagem, setListaDeMensagens] = useState([]);
+    const [colorBtnEnviar, setColorBtnEnviar] = useState(appConfig.theme.colors.primary[500]);
     useEffect(() => {
         supabaseClient
             .from('mensagens')
@@ -48,6 +51,14 @@ export default function ChatPage() {
 
 
         setMensagem('');
+    }
+    function validacaoDeMensagem(mensagemParaSerValidada) {
+        //Se a mensagem for maior que o minimo e menor que o maximo de caracteres  ela é valida
+        if (mensagemParaSerValidada.trim().length > MINIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM
+            &&
+            mensagemParaSerValidada.trim().length < MAXIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM) {
+            handleNovaMensagem(mensagem);
+        }
     }
     return (
         <Box
@@ -105,15 +116,20 @@ export default function ChatPage() {
                         <TextField
                             value={mensagem}
                             onChange={(event) => {
-                                setMensagem(event.target.value);
-                            }}
+                                //Se o usuario digitar mais de 50 caracteres, ele nao deixa enviar
+                                if (event.target.value.length <= MAXIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM) {
+                                    setMensagem(event.target.value);
+                                    setColorBtnEnviar(appConfig.theme.colors.primary[500]);
+                                } else {
+                                    setColorBtnEnviar(appConfig.theme.colors.primary.red);
+                                }
+                            }
+                            }
                             onKeyPress={(event) => {
                                 if (event.key === 'Enter') {
                                     event.preventDefault();
-                                    // Com esse if o usuario nao consegue enviar mensagem com espaço nem com nada escrito
-                                    if (mensagem.trim().length > MINIMO_PARA_ENVIAR) {
-                                        handleNovaMensagem(mensagem);
-                                    }
+                                    //Entra na funçao de validação da mensagem
+                                    validacaoDeMensagem(mensagem);
 
                                 }
 
@@ -134,14 +150,14 @@ export default function ChatPage() {
                         <Button
                             onClick={(event) => {
                                 event.preventDefault();
-                                handleNovaMensagem(mensagem);
+                                validacaoDeMensagem(mensagem);
                             }}
                             styleSheet={{
                                 fontSize: '16px'
                             }}
                             buttonColors={{
                                 contrastColor: appConfig.theme.colors.neutrals["000"],
-                                mainColor: appConfig.theme.colors.primary[500],
+                                mainColor: colorBtnEnviar,
                                 mainColorLight: appConfig.theme.colors.primary[400],
                                 mainColorStrong: appConfig.theme.colors.primary.black,
                             }}
@@ -207,19 +223,29 @@ function MessageList(props) {
                             <Box
                                 styleSheet={{
                                     marginBottom: '8px',
+                                    position: 'relative',
 
                                 }}
                             >
-                                <Image
-                                    styleSheet={{
-                                        width: '20px',
-                                        height: '20px',
-                                        borderRadius: '50%',
-                                        display: 'inline-block',
-                                        marginRight: '8px',
-                                    }}
-                                    src={`https://github.com/${mensagem.de}.png`}
-                                />
+
+                                <Text>
+                                    <Box class="box-git-image">
+                                        <Text> {mensagem.de}</Text>
+                                    </Box>
+                                    {/* target="_blank" href={`https://github.com/${mensagem.de}`} */}
+                                    <Image
+                                        id="img-github-user"
+                                        styleSheet={{
+                                            width: '20px',
+                                            height: '20px',
+                                            borderRadius: '50%',
+                                            display: 'inline-block',
+                                            marginRight: '8px',
+                                        }}
+                                        src={`https://github.com/${mensagem.de}.png`}
+                                    />
+                                </Text>
+
                                 <Text tag="strong">
                                     {mensagem.de}
                                 </Text>
