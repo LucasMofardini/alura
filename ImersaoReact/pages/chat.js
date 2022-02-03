@@ -58,6 +58,8 @@ export default function ChatPage() {
             &&
             mensagemParaSerValidada.trim().length < MAXIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM) {
             handleNovaMensagem(mensagem);
+        } else {
+            setColorBtnEnviar(appConfig.theme.colors.primary.red)
         }
     }
     return (
@@ -117,7 +119,7 @@ export default function ChatPage() {
                             value={mensagem}
                             onChange={(event) => {
                                 //Se o usuario digitar mais de 50 caracteres, ele nao deixa enviar
-                                if (event.target.value.length <= MAXIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM) {
+                                if (event.target.value.trim().length <= MAXIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM) {
                                     setMensagem(event.target.value);
                                     setColorBtnEnviar(appConfig.theme.colors.primary[500]);
                                 } else {
