@@ -2,6 +2,8 @@ import { Box, Text, TextField, Image, Button } from '@skynexui/components';
 import React, { useEffect, useState } from 'react';
 import appConfig from '../config.json';
 import { createClient } from '@supabase/supabase-js'
+import { useRouter } from 'next/router';
+import { ButtonSendSticker } from '../src/components/ButtonSendSticker';
 
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzY2MTA5NiwiZXhwIjoxOTU5MjM3MDk2fQ.2RI4sZrhdeWi5VWnmvnMfwmb6O68ZTP0nh_jsyfCMRg';
 const SUPABASE_URL = 'https://nnrtzcqguqdqwuzhhwmu.supabase.co';
@@ -10,28 +12,50 @@ const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const MINIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM = 0;
 const MAXIMO_DE_CARACTERES_PARA_ENVIAR_MENSAGEM = 50;
 
+function escutaMensagensEmTempoReal(adicionaMensagem) {
+    return supabaseClient
+        .from('mensagens')
+        .on('INSERT', (respostaLive) => {
+            adicionaMensagem(respostaLive.new);
+        })
+        .subscribe();
+}
 
 
 export default function ChatPage() {
+    const roteamento = useRouter();
+    const usuarioLogado = roteamento.query.username;
     const [mensagem, setMensagem] = useState('');
     const [listaDeMensagem, setListaDeMensagens] = useState([]);
+
     const [colorBtnEnviar, setColorBtnEnviar] = useState(appConfig.theme.colors.primary[500]);
+
     useEffect(() => {
         supabaseClient
             .from('mensagens')
             .select('*')
             .order('id', { ascending: false })
             .then(({ data }) => {
-                console.log('Dados da consulta : ', data);
+                // console.log('Dados da consulta : ', data);
                 setListaDeMensagens(data);
             });
+        escutaMensagensEmTempoReal((novaMensagem) => {
+            setListaDeMensagens(
+                (valorAtualDaLista) => {
+                    return [
+                        novaMensagem,
+                        ...valorAtualDaLista,
+                    ];
+                }
+            );
+        });
 
     }, []);
 
 
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
-            de: 'lucasmofardini',
+            de: usuarioLogado,
             texto: novaMensagem,
 
         };
@@ -42,11 +66,10 @@ export default function ChatPage() {
                 mensagem
             ])
             .then(({ data }) => {
-                console.log(data[0])
-                setListaDeMensagens([
-                    data[0],
-                    ...listaDeMensagem,
-                ]);
+                // setListaDeMensagens([
+                //     data[0],
+                //     ...listaDeMensagem,
+                // ]);
             });
 
 
@@ -149,13 +172,21 @@ export default function ChatPage() {
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
                         />
+                        {/* CallBack - chamada de retorno */}
+                        <ButtonSendSticker onStickerClick={(sticker) => {
+                            handleNovaMensagem(`:sticker: ${sticker}`);
+                        }} />
                         <Button
                             onClick={(event) => {
                                 event.preventDefault();
                                 validacaoDeMensagem(mensagem);
                             }}
                             styleSheet={{
-                                fontSize: '16px'
+                                fontSize: '16px',
+                                padding: '0 3px 0 0',
+                                margin: '0 0 0 12px',
+                                fontSize: '20px',
+                                marginBottom: '8px',
                             }}
                             buttonColors={{
                                 contrastColor: appConfig.theme.colors.neutrals["000"],
@@ -262,7 +293,18 @@ function MessageList(props) {
                                     {(new Date().toLocaleDateString())}
                                 </Text>
                             </Box>
-                            {mensagem.texto}
+
+                            {/* Modo declarativo - 
+                             Se for Sticker vai entrar na primera () se nao entra na segunda
+                            */}
+                            {mensagem.texto.startsWith(':sticker:')
+                                ? (
+                                    <Image src={mensagem.texto.replace(':sticker:', '')} />
+                                )
+                                : (
+                                    mensagem.texto
+                                )}
+
                         </Text>
                     )
                 })
