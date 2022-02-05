@@ -53,6 +53,7 @@ export default function PaginaInicial() {
                 }}
             >
                 <Box
+                    id="box-index"
                     styleSheet={{
                         display: 'flex',
                         alignItems: 'center',
@@ -138,6 +139,7 @@ export default function PaginaInicial() {
                             borderRadius: '10px',
                             flex: 1,
                             minHeight: '240px',
+
                         }}
                     >
 

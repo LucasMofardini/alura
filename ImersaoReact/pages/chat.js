@@ -91,8 +91,13 @@ export default function ChatPage() {
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 backgroundColor: appConfig.theme.colors.primary[500],
                 backgroundImage: `url(https://i.pinimg.com/originals/bd/8d/b6/bd8db6e6d336033e654188d56812e779.jpg)`,
-                backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
-                color: appConfig.theme.colors.neutrals['000']
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundBlendMode: 'multiply',
+                color: appConfig.theme.colors.neutrals['000'],
+
+
+
             }}
         >
             <Box
@@ -107,6 +112,7 @@ export default function ChatPage() {
                     maxWidth: '95%',
                     maxHeight: '95vh',
                     padding: '32px',
+
                 }}
             >
                 <Header />
@@ -182,11 +188,24 @@ export default function ChatPage() {
                                 validacaoDeMensagem(mensagem);
                             }}
                             styleSheet={{
-                                fontSize: '16px',
+                                // fontSize: '16px',
+                                // padding: '6px 8px',
+                                // margin: '0 0 0 12px',
+                                // fontSize: '20px',
+                                // marginBottom: '8px',
+                                // width: '100%',
+
+                                borderRadius: '50%',
                                 padding: '0 3px 0 0',
-                                margin: '0 0 0 12px',
+                                minWidth: '50px',
+                                minHeight: '50px',
                                 fontSize: '20px',
                                 marginBottom: '8px',
+                                lineHeight: '0',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginLeft: '10px',
                             }}
                             buttonColors={{
                                 contrastColor: appConfig.theme.colors.neutrals["000"],
@@ -300,7 +319,7 @@ function MessageList(props) {
                             {mensagem.texto.startsWith(':sticker:')
                                 ? (
                                     <Image styleSheet={{
-                                        maxWidth: '15%',
+                                        width: '250px',
                                     }}
                                         src={mensagem.texto.replace(':sticker:', '')} />
                                 )
