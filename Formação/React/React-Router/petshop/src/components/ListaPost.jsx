@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { busca } from '../api/api'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { busca } from '../api/api';
 
+s
 
+const ListaPost = ({ url }) => {
 
-const ListaPost = ( { url } ) => { 
+  const [posts, setPosts] = useState([]);
 
-const [posts, setPosts] = useState([])
+  useEffect(() => {
+    busca(url, setPosts)
+  }, [url])
 
-useEffect(() => {
-  busca(url, setPosts)
-}, [])
-
-  return(
+  return (
     <section className="posts container">
-      { 
-       posts.map((post)=> (
-         <Link className={`cartao-post cartao-post--${post.categoria}`} to={`/posts/${post.id}`}>
-           <article key={post.id}>
+      {
+        posts.map((post) => (
+          <Link className={`cartao-post cartao-post--${post.categoria}`} to={`/posts/${post.id}`}>
+            <article key={post.id}>
               <h3 className="cartao-post__titulo">
                 {post.title}
               </h3>
               <p className="cartao-post__meta">{post.metadescription}</p>
-           </article> 
-         </Link>
-       ))
+            </article>
+          </Link>
+        ))
       }
     </section>
   )

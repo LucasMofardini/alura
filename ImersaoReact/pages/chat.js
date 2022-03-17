@@ -87,6 +87,7 @@ export default function ChatPage() {
     }
     return (
         <Box
+            id="box-chat"
             styleSheet={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 backgroundColor: appConfig.theme.colors.primary[500],
@@ -95,7 +96,7 @@ export default function ChatPage() {
                 backgroundSize: 'cover',
                 backgroundBlendMode: 'multiply',
                 color: appConfig.theme.colors.neutrals['000'],
-
+                maxWidth: '100%',
 
 
             }}
@@ -225,7 +226,10 @@ export default function ChatPage() {
 function Header() {
     return (
         <>
-            <Box styleSheet={{ width: '100%', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} >
+            <Box
+                styleSheet={{ width: '100%', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+            >
+
                 <Text variant='heading5'>
                     Chat
                 </Text>
@@ -319,7 +323,7 @@ function MessageList(props) {
                             {mensagem.texto.startsWith(':sticker:')
                                 ? (
                                     <Image styleSheet={{
-                                        width: '250px',
+                                        width: '150px',
                                     }}
                                         src={mensagem.texto.replace(':sticker:', '')} />
                                 )

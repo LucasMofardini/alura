@@ -47,6 +47,7 @@ function GlobalStyle() {
         .box-git-image.ativo{
           border: 1px solid green;
         }
+      
         /* ./App fit Height */ 
 
       `}</style>
