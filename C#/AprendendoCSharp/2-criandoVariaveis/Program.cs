@@ -29,6 +29,23 @@ class Programa
 
         float altura = 1.62f;
 
+        char letra = 'a'; //Um caractere
+        Console.WriteLine(letra);
+
+        letra = (char)65;
+        Console.WriteLine(letra);
+
+        string primeiraFrase = "Lucas Mofardini";
+        Console.WriteLine(primeiraFrase);
+
+        string cursos = @"
+                        - Go
+                        - JS
+                        - C#
+                        - Java
+                        - Ruby
+                        - Python";
+        Console.WriteLine(cursos);
 
         Console.WriteLine("Tecle enter para sair ...");
         Console.ReadLine();
