@@ -34,7 +34,7 @@ class Programa
 
         letra = (char)65;
         Console.WriteLine(letra);
-
+            
         string primeiraFrase = "Lucas Mofardini";
         Console.WriteLine(primeiraFrase);
 
@@ -43,7 +43,7 @@ class Programa
                         - JS
                         - C#
                         - Java
-                        - Ruby
+                        - Ruby  
                         - Python";
         Console.WriteLine(cursos);
 
