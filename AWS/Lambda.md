@@ -18,3 +18,8 @@ _________
 
 - Configurei um trigger para toda vez que cair algum arquivo no S3 ele dispara a Lamda
 
+________
+03 - 
+
+- 
+

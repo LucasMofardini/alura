@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "l6jBy4ZqGLR1TFvuQ/OQa0nqZ2Papeg/F16t84RdUn0+RTf6UTCTFLIaEt8SNbFMhPklCSK0fJAT4YvejiZUEw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lucas\\Desktop\\Alura\\.NET\\CriandoAPI\\CriandoAPI\\CriandoAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
