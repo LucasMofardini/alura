@@ -2,8 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CriandoAPI.Models;
 
-public class Filme
+public class Movie
 {
+    public int Id { get; set; }
     [Required(ErrorMessage = "O titulo do filme é obrigatorio")]
     [MaxLength(50, ErrorMessage = "O Titulo não pode exceder 50 caracteres")]
     public string Titulo { get; set; }
