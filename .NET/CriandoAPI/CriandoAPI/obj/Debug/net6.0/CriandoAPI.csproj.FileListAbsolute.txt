@@ -25,3 +25,14 @@ C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Swashbu
 C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\obj\Debug\net6.0\CriandoAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\obj\Debug\net6.0\CriandoAPI.csproj.CopyComplete
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Humanizer.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\lucas\Desktop\Alura\.NET\CriandoAPI\CriandoAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

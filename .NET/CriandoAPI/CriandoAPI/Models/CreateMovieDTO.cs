@@ -2,16 +2,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CriandoAPI.Models;
 
-public class Movie
+public class CreateMovieDTO
 {
-    [Key]
-    [Required]
-    public int Id { get; set; }
+
     [Required(ErrorMessage = "O titulo do filme é obrigatorio")]
-    [MaxLength(50, ErrorMessage = "O Titulo não pode exceder 50 caracteres")]
+    [StringLength(50, ErrorMessage = "O Titulo não pode exceder 50 caracteres")]
     public string Titulo { get; set; }
-    [MaxLength(50, ErrorMessage = "O Genero não pode exceder 50 caracteres")]
     [Required(ErrorMessage = "O titulo do genero é obrigatorio")]
+    [StringLength(50, ErrorMessage = "O Genero não pode exceder 50 caracteres")]
     public string Genero { get; set; }
     [Range(10, 700, ErrorMessage = "A duração tem que estar entre 10 a 700")]
     [Required(ErrorMessage = "A duração é obrigatorio")]
